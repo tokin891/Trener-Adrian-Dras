@@ -4,17 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trener Adrian Dras - Plany treningowe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin:0;
-      font-family: 'Poppins', Arial, sans-serif;
-      background-color: #111;
-      color: #f0f0f0;
+    :root {
+      --primary-color: #cc0000;
+      --primary-dark: #990000;
+      --bg-color: #111;
+      --card-bg: #1c1c1c;
+      --text-color: #f0f0f0;
+      --text-secondary: #aaa;
     }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
     header {
       position: relative;
-      height: 80vh;
+      height: 90vh;
+      min-height: 500px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -38,90 +57,198 @@
 
     #start-btn {
       font-weight: 700;
-      font-size: 2.5rem;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      background-color: #cc0000;
+      background-color: var(--primary-color);
       border: none;
       padding: 1rem 3rem;
       border-radius: 10px;
       color: white;
       cursor: pointer;
-      box-shadow: 0 0 20px #cc0000;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 20px var(--primary-color);
+      transition: all 0.3s ease;
       z-index: 1;
+      transform: translateY(0);
     }
+    
     #start-btn:hover {
-      background-color: #990000;
-      box-shadow: 0 0 30px #990000;
+      background-color: var(--primary-dark);
+      box-shadow: 0 0 30px var(--primary-dark);
+      transform: translateY(-3px);
     }
+    
     nav {
-      background-color: #1c1c1c;
+      background-color: var(--card-bg);
       position: sticky;
       top: 0;
       z-index: 999;
       width: 100%;
-      box-sizing: border-box;
-      padding: 0;
+      padding: 0.5rem 0;
+      backdrop-filter: blur(5px);
+      background-color: rgba(28, 28, 28, 0.9);
     }
 
     .nav-container {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.5rem;
       max-width: 1000px;
       margin: 0 auto;
-      padding: 0.5rem 1rem;
+      padding: 0 1rem;
       width: 100%;
-      box-sizing: border-box;
     }
 
     nav a {
-      color: #f0f0f0;
+      color: var(--text-color);
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       padding: 0.5rem 1rem;
       border-radius: 5px;
       transition: all 0.3s ease;
       white-space: nowrap;
+      font-size: clamp(0.8rem, 3vw, 1rem);
     }
 
     nav a:hover {
-      color: #cc0000;
+      color: var(--primary-color);
       background-color: rgba(204, 0, 0, 0.1);
     }
 
-    @media (max-width: 600px) {
-      .nav-container {
-        padding: 0.5rem;
-        gap: 0.3rem;
-      }
-      
-      nav a {
-        padding: 0.5rem 0.3rem;
-        font-size: 0.8rem;
-        flex: 1 1 auto;
-        min-width: unset;
-      }
-    }
-
-    @media (max-width: 400px) {
-      nav a {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.3rem;
-      }
-    }
     .section {
-      padding: 2rem;
+      padding: 3rem 1.5rem;
       max-width: 1000px;
       margin: auto;
     }
-    .section img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin: 1rem 0;
+    
+    .section-title {
+      color: var(--primary-color);
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      line-height: 1.3;
     }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: var(--primary-color);
+      margin: 1rem auto 0;
+    }
+
+    .intro-container {
+      background-color: var(--card-bg);
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+      border: 1px solid #333;
+      margin: 3rem auto;
+    }
+
+    .intro-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .intro-image-container {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .portrait-image {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 4px solid var(--primary-color);
+      box-shadow: 0 0 30px rgba(204, 0, 0, 0.6);
+    }
+
+    .intro-text {
+      width: 100%;
+    }
+    
+    .intro-text h3 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+
+    .highlight {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    .lead {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+    }
+
+    .consultation-btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      box-shadow: 0 5px 20px rgba(204, 0, 0, 0.4);
+      width: 100%;
+      max-width: 300px;
+      display: block;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .consultation-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
+    }
+
+    .section img:not(.portrait-image, .opinie-image) {
+      width: 100%;
+      border-radius: 15px;
+      margin: 1.5rem 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .plan-features {
+      list-style-type: none;
+      margin: 1.5rem 0;
+    }
+
+    .plan-features li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.8rem;
+      color: var(--text-color);
+      font-size: clamp(0.9rem, 3vw, 1rem);
+    }
+
+    .plan-features li::before {
+      content: "✓";
+      color: var(--primary-color);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
     .plans {
       display: flex;
       flex-wrap: wrap;
@@ -129,18 +256,20 @@
       justify-content: center;
       margin-top: 2rem;
     }
+
     .plan {
       background: rgba(28, 28, 28, 0.8);
-      border: 2px solid #cc0000;
+      border: 2px solid var(--primary-color);
       border-radius: 15px;
-      padding: 2rem;
+      padding: 1.5rem;
       box-shadow: 0 10px 25px rgba(204, 0, 0, 0.2);
-      width: 300px;
+      width: 100%;
+      max-width: 350px;
       text-align: center;
       position: relative;
       overflow: hidden;
       z-index: 1;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .plan:hover {
@@ -181,12 +310,12 @@
 
     .plan h3 {
       margin-top: 0;
-      color: #ffffff; /* Zmiana z #cc0000 na biały */
-      font-size: 1.5rem;
+      color: var(--text-color);
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
       margin-bottom: 1.5rem;
       position: relative;
       padding-bottom: 1rem;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Dodanie cienia dla lepszej czytelności */
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
 
     .plan h3::after {
@@ -197,40 +326,11 @@
       transform: translateX(-50%);
       width: 50px;
       height: 2px;
-      background: #ffffff; /* Zmiana z #cc0000 na biały */
+      background: var(--text-color);
     }
 
-    .plan p {
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      color: #f0f0f0; /* Jasnoszary dla lepszej czytelności */
-    }
-
-    .plan-features li {
-      margin-bottom: 0.8rem;
-      position: relative;
-      padding-left: 1.5rem;
-      color: #f0f0f0; /* Jasnoszary tekst */
-    }
-
-    .plan-features li::before {
-      content: "✓";
-      color: #ffffff; /* Białe znaczniki */
-      font-weight: bold;
-    }
-
-    .plan h3::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50px;
-      height: 2px;
-      background: #cc0000;
-    }
     .plan .price {
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
       font-weight: 700;
       color: #fff;
       margin: 1.5rem 0;
@@ -240,23 +340,23 @@
     .plan .price::before {
       content: "Tylko";
       display: block;
-      font-size: 1rem;
-      color: #aaa;
+      font-size: clamp(0.9rem, 3vw, 1rem);
+      color: var(--text-secondary);
       font-weight: 400;
     }
 
     .plan button {
       font-family: 'Poppins', Arial, sans-serif;
       font-weight: 700;
-      background-color: #cc0000;
+      background-color: var(--primary-color);
       color: white;
       border: none;
-      padding: 1rem 2rem;
+      padding: 1rem;
       border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
       width: 100%;
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 3vw, 1.1rem);
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-top: 1.5rem;
@@ -264,117 +364,9 @@
     }
 
     .plan button:hover {
-      background-color: #990000;
+      background-color: var(--primary-dark);
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(204, 0, 0, 0.4);
-    }
-
-    .plan-features {
-      text-align: left;
-      margin: 1.5rem 0;
-      padding-left: 1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #222;
-      color: white;
-      margin-top: 3rem;
-    }
-    h2 {
-      color: #cc0000;
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-
-    h2::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 3px;
-      background: #cc0000;
-      margin: 1rem auto 0;
-    }
-
-    a {
-      color: #cc0000;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #ff3333;
-    }
-
-    .intro-container {
-      background-color: #1c1c1c;
-      border-radius: 15px;
-      padding: 3rem;
-      box-shadow: 0 0 30px rgba(0,0,0,0.7);
-      border: 1px solid #333;
-      margin: 3rem auto;
-    }
-
-    .intro-content {
-      display: flex;
-      align-items: flex-start;
-      gap: 3rem;
-    }
-
-    .intro-image-container {
-      flex: 0 0 35%;
-      min-width: 250px;
-    }
-
-    .portrait-image {
-      width: 100%;
-      height: auto;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 15px;
-      border: 4px solid #cc0000;
-      box-shadow: 0 0 30px rgba(204, 0, 0, 0.6);
-    }
-
-    .intro-text {
-      flex: 1;
-    }
-
-    .highlight {
-      color: #cc0000;
-      font-weight: 700;
-    }
-
-    .lead {
-      font-size: 1.3rem;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-      color: #f0f0f0;
-    }
-
-    .consultation-btn {
-      background-color: #cc0000;
-      color: white;
-      border: none;
-      padding: 15px 40px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-top: 2rem;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      box-shadow: 0 5px 20px rgba(204, 0, 0, 0.4);
-    }
-
-    .consultation-btn:hover {
-      background-color: #990000;
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(204, 0, 0, 0.5);
     }
 
     .opinie-container {
@@ -382,12 +374,11 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
 
     .opinie-item {
-      flex: 1;
-      min-width: 250px;
+      flex: 1 1 300px;
       max-width: 350px;
       transition: transform 0.3s ease;
     }
@@ -400,102 +391,110 @@
       width: 100%;
       height: auto;
       border-radius: 15px;
-      border: 2px solid #cc0000;
+      border: 2px solid var(--primary-color);
       box-shadow: 0 5px 20px rgba(204, 0, 0, 0.3);
     }
 
-    @media(max-width: 768px) {
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #222;
+      color: white;
+      margin-top: 3rem;
+    }
+    
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff3333;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+    
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+    
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+
+    /* Media Queries */
+    @media (min-width: 768px) {
       header {
-        height: 60vh;
-      }
-      
-      #start-btn {
-        font-size: 2rem;
-        padding: 0.8rem 2rem;
-      }
-      
-      nav {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
+        height: 80vh;
       }
       
       .intro-content {
-        flex-direction: column;
-        gap: 2rem;
+        flex-direction: row;
+        align-items: center;
       }
       
       .intro-image-container {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
+        flex: 0 0 35%;
       }
       
-      .portrait-image {
-        max-height: 400px;
+      .intro-text {
+        flex: 1;
       }
       
       .consultation-btn {
-        width: 100%;
-        padding: 15px;
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
       }
       
-      .opinie-item {
-        min-width: 100%;
+      .nav-container {
+        gap: 1rem;
       }
       
-      .plan {
-        width: 100%;
-      }
-      
-      h2 {
-        font-size: 2rem;
-      }
-      
-      .section {
-        padding: 1.5rem;
+      nav a {
+        padding: 0.5rem 1.2rem;
       }
     }
-
-    @media(max-width: 480px) {
-      #start-btn {
-        font-size: 1.5rem;
-        padding: 0.7rem 1.5rem;
-      }
-      
-      h2 {
-        font-size: 1.8rem;
-      }
-      
-      .plan h3 {
-        font-size: 1.3rem;
-      }
-      
-      .plan .price {
-        font-size: 2rem;
+    
+    @media (min-width: 992px) {
+      .section {
+        padding: 4rem 2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <header class="fade-in">
     <button id="start-btn" onclick="location.href='#plany'">Zacznij przemianę już dziś</button>
   </header>
 
   <nav>
     <div class="nav-container">
-      <a href="#plany">Plany</a>
-      <a href="#kim-jestem">Kim jestem</a>
-      <a href="#dlaczego-ja">Dlaczego ja</a>
-      <a href="#opinie">Opinie</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#plany" class="fade-in delay-1">Plany</a>
+      <a href="#kim-jestem" class="fade-in delay-1">Kim jestem</a>
+      <a href="#dlaczego-ja" class="fade-in delay-2">Dlaczego ja</a>
+      <a href="#opinie" class="fade-in delay-2">Opinie</a>
+      <a href="#kontakt" class="fade-in delay-3">Kontakt</a>
     </div>
   </nav>
 
   <section class="section" id="kim-jestem">
-    <div class="intro-container">
-      <h2>Wprowadzenie</h2>
+    <div class="intro-container fade-in">
+      <h2 class="section-title">Wprowadzenie</h2>
       <div class="intro-content">
         <div class="intro-image-container">
           <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Adrian Dras" class="portrait-image" />
@@ -504,16 +503,16 @@
           <h3>Cześć, jestem <span class="highlight">Adrian Dras</span></h3>
           <p class="lead">Moja misja? Sprawić, by droga do Twojego wymarzonego ciała była jasna oraz motywująca.</p>
           <p>Każdy plan tworzę od podstaw, biorąc pod uwagę Twój unikalny styl życia, doświadczenie treningowe i dostępny sprzęt. W moim podejściu nie ma miejsca na szablony - tylko spersonalizowane rozwiązania dopasowane do Ciebie. Twój sukces zaczyna się teraz - podejmij decyzję i pozwól mi poprowadzić Cię do wymarzonych rezultatów!</p>
-          <button class="consultation-btn" onclick="location.href='#kontakt'">Zobacz ofertę</button>
+          <button class="consultation-btn" onclick="location.href='#plany'">Zobacz ofertę</button>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" id="dlaczego-ja">
-    <h2>Dlaczego ja?</h2>
-    <img src="Images/5cae5195-e932-4139-92ac-c51663a2abc0.jpg" alt="Dlaczego warto" />
-    <ul class="plan-features">
+    <h2 class="section-title fade-in">Dlaczego ja?</h2>
+    <img src="Images/5cae5195-e932-4139-92ac-c51663a2abc0.jpg" alt="Dlaczego warto" class="fade-in delay-1" />
+    <ul class="plan-features fade-in delay-2">
       <li>Indywidualne podejście do każdego klienta</li>
       <li>Plany oparte na nauce i doświadczeniu</li>
       <li>Stałe wsparcie i motywacja</li>
@@ -522,28 +521,28 @@
   </section>
 
   <section class="section" id="opinie">
-    <h2>Opinie klientów</h2>
+    <h2 class="section-title fade-in">Opinie klientów</h2>
     <div class="opinie-container">
-      <div class="opinie-item">
+      <div class="opinie-item fade-in delay-1">
         <img src="Images/opinia1.png" alt="Opinia klienta 1" class="opinie-image" />
       </div>
-      <div class="opinie-item">
+      <div class="opinie-item fade-in delay-2">
         <img src="Images/Opinia2.png" alt="Opinia klienta 2" class="opinie-image" />
       </div>
-      <div class="opinie-item">
+      <div class="opinie-item fade-in delay-3">
         <img src="Images/Opinia3.png" alt="Opinia klienta 3" class="opinie-image" />
       </div>
-      <div class="opinie-item">
+      <div class="opinie-item fade-in delay-1">
         <img src="Images/Opinia4.png" alt="Opinia klienta 4" class="opinie-image" />
       </div>
     </div>
   </section>
 
   <section class="section" id="plany">
-    <h2>Wybierz swój plan</h2>
-    <img src="Images/54dad85f-f276-4d48-8caa-bf0533cbe768.jpg" alt="Plany treningowe" />
+    <h2 class="section-title fade-in">Wybierz swój plan</h2>
+    <img src="Images/54dad85f-f276-4d48-8caa-bf0533cbe768.jpg" alt="Plany treningowe" class="fade-in delay-1" />
     <div class="plans">
-      <div class="plan">
+      <div class="plan fade-in delay-1">
         <div class="plan-content">
           <h3>Indywidualny Plan Treningowy + 1 miesiąc prowadzenia online</h3>
           <ul class="plan-features">
@@ -554,10 +553,10 @@
             <li>Dostęp do zamkniętej grupy</li>
           </ul>
           <span class="price">250 zł</span>
-          <button onclick="location.href='#'">Kup teraz</button>
+          <button onclick="location.href='https://buy.stripe.com/9B600kabw4Zn5aj0Yk8Ra02'">Kup teraz</button>
         </div>
       </div>
-      <div class="plan">
+      <div class="plan fade-in delay-2">
         <div class="plan-content">
           <h3>Indywidualny Plan Treningowy</h3>
           <ul class="plan-features">
@@ -567,10 +566,10 @@
             <li>Modyfikacje co 4 tygodnie</li>
           </ul>
           <span class="price">150 zł</span>
-          <button onclick="window.location.href='https://buy.stripe.com/14k3d272Sdc94kEcMM'">Kup teraz</button>
+          <button onclick="window.location.href='https://buy.stripe.com/4gMeVefvQ4ZnbyH9uQ8Ra01'">Kup teraz</button>
         </div>
       </div>
-      <div class="plan">
+      <div class="plan fade-in delay-3">
         <div class="plan-content">
           <h3>Plan dla początkujących</h3>
           <ul class="plan-features">
@@ -587,12 +586,12 @@
   </section>
 
   <section class="section" id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Email: adriancalisthenics1@gmail.com</p>
-    <p>Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank">@adrian_calisthenics1</a></p>
+    <h2 class="section-title fade-in">Kontakt</h2>
+    <p class="fade-in delay-1">Email: adriancalisthenics1@gmail.com</p>
+    <p class="fade-in delay-2">Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank">@adrian_calisthenics1</a></p>
   </section>
 
-  <footer>
+  <footer class="fade-in delay-3">
     &copy; 2025 Trener Adrian Dras. Wszelkie prawa zastrzeżone.
   </footer>
 
