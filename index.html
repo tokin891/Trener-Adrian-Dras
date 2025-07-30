@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trener Max - Plany treningowe</title>
+  <title>Trener Adrian Dras - Plany treningowe</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      margin: 0;
+      margin:0;
       font-family: 'Poppins', Arial, sans-serif;
       background-color: #111;
       color: #f0f0f0;
     }
-    header {
+      header {
       position: relative;
       height: 80vh;
       display: flex;
@@ -20,18 +20,22 @@
       align-items: center;
       text-align: center;
       color: white;
+      overflow: hidden; /* Dodane aby ukryć ewentualne wystające elementy */
     }
+    
     header::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('Images/d79aeced-35df-453b-bc75-746e2f7a21a7.jpg') no-repeat center center/cover;
+      right: 0;
+      bottom: 0;
+      background: url('Images/d79aeced-35df-453b-bc75-746e2f7a21a7.jpg') no-repeat center center;
+      background-size: cover;
       filter: brightness(50%);
       z-index: -1;
     }
+
     #start-btn {
       font-weight: 700;
       font-size: 2.5rem;
@@ -52,23 +56,26 @@
       box-shadow: 0 0 30px #990000;
     }
     nav {
-  background-color: #1c1c1c;
-  padding: 0.5rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  width: 100%;
-}
+      background-color: #1c1c1c;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+      box-sizing: border-box; /* Ważne dla poprawnego liczenia szerokości */
+      padding: 0; /* Resetujemy domyślne paddingi */
+    }
 
-.nav-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0.5rem 0;
-}
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0.5rem 1rem; /* Padding tylko wewnątrz kontenera */
+      width: 100%;
+      box-sizing: border-box;
+    }
 
 nav a {
   color: #f0f0f0;
@@ -85,21 +92,19 @@ nav a:hover {
   background-color: rgba(204, 0, 0, 0.1);
 }
 
-@media (max-width: 600px) {
-  .nav-container {
-    gap: 0.5rem;
-    padding: 0.5rem;
-    justify-content: space-around;
-  }
-  
-  nav a {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    flex: 1;
-    text-align: center;
-    min-width: 80px;
-  }
-}
+ @media (max-width: 600px) {
+      .nav-container {
+        padding: 0.5rem; /* Mniejszy padding na mobile */
+        gap: 0.3rem; /* Mniejszy odstęp między elementami */
+      }
+      
+      nav a {
+        padding: 0.5rem 0.3rem;
+        font-size: 0.8rem;
+        flex: 1 1 auto; /* Lepsze dopasowanie na małych ekranach */
+        min-width: unset; /* Usuwamy minimalną szerokość */
+      }
+    }
 
 @media (max-width: 400px) {
   nav a {
@@ -281,13 +286,13 @@ nav a:hover {
       <h2>Wprowadzenie</h2>
       <div class="intro-content">
         <div class="intro-image-container">
-          <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Maciej Przeniosło" class="portrait-image" />
+          <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Adrian Dras" class="portrait-image" />
         </div>
         <div class="intro-text">
           <h3>Cześć, jestem <span class="highlight">Adrian Dras</span></h3>
           <p class="lead">Moja misja? Sprawić, by droga do Twojego wymarzonego ciała była jasna oraz motywująca.</p>
   <p>Każdy plan tworzę od podstaw, biorąc pod uwagę Twój unikalny styl życia, doświadczenie treningowe i dostępny sprzęt. W moim podejściu nie ma miejsca na szablony - tylko spersonalizowane rozwiązania dopasowane do Ciebie. Twój sukces zaczyna się teraz - podejmij decyzję i pozwól mi poprowadzić Cię do wymarzonych rezultatów!</p>
-          <button class="consultation-btn" onclick="location.href='#kontakt'">Umów konsultację</button>
+          <button class="consultation-btn" onclick="location.href='#kontakt'">Zobacz ofertę</button>
         </div>
       </div>
     </div>
@@ -317,21 +322,21 @@ nav a:hover {
     <img src="plan-treningowy.jpg" alt="Plany treningowe" />
     <div class="plans">
       <div class="plan">
-        <h3>Plan na masę</h3>
+        <h3>Idywidualny Plan Treningowy + 1 miesiąc prowadzenia online</h3>
         <p>Intensywny program budujący masę mięśniową.</p>
-        <p><strong>59 zł</strong></p>
+        <p><strong>250 zł</strong></p>
         <button onclick="location.href='#'">Kup teraz</button>
       </div>
       <div class="plan">
-        <h3>Plan redukcyjny</h3>
+        <h3>Idywidualny Plan Treningowy</h3>
         <p>Spal tłuszcz i odkryj mięśnie.</p>
-        <p><strong>49 zł</strong></p>
+        <p><strong>150 zł</strong></p>
         <button onclick="location.href='#'">Kup teraz</button>
       </div>
       <div class="plan">
         <h3>Plan dla początkujących</h3>
         <p>Idealny na start – bez sprzętu.</p>
-        <p><strong>39 zł</strong></p>
+        <p><strong>50 zł</strong></p>
         <button onclick="location.href='#'">Kup teraz</button>
       </div>
     </div>
@@ -339,12 +344,12 @@ nav a:hover {
 
   <section class="section" id="kontakt">
     <h2>Kontakt</h2>
-    <p>Email: trenermax@example.com</p>
-    <p>Instagram: <a href="https://instagram.com/trenermax" target="_blank">@trenermax</a></p>
+    <p>Email: adriancalisthenics1@gmail.com</p>
+    <p>Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank">@adrian_calisthenics1</a></p>
   </section>
 
   <footer>
-    &copy; 2025 Trener Max. Wszelkie prawa zastrzeżone.
+    &copy; 2025 Trener Adrian
   </footer>
 
 </body>
