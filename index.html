@@ -314,6 +314,49 @@
       font-weight: 400;
     }
 
+    .faq-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(204, 0, 0, 0.2);
+    padding-bottom: 1rem;
+  }
+  
+  .faq-question {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+  }
+  
+  .faq-question:hover {
+    color: var(--primary-color);
+  }
+  
+  .faq-answer {
+    color: var(--text-secondary);
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 1.5rem 1rem;
+  }
+  
+  .faq-item.active .faq-question i {
+    transform: rotate(180deg);
+  }
+
     /* === Opinie === */
     .opinions-grid {
       display: grid;
@@ -392,6 +435,7 @@
       <a href="#kim-jestem">Kim jestem</a>
       <a href="#dlaczego-ja">Dlaczego ja</a>
       <a href="#opinie">Opinie</a>
+      <a href="#faq">FAQ</a>
       <a href="#kontakt">Kontakt</a>
     </div>
   </nav>
@@ -491,12 +535,107 @@
     </div>
   </section>
 
+  <section class="section" id="faq">
+  <h2 class="section-title">Najczęściej zadawane pytania</h2>
+  
+  <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+    <!-- Pytanie 1 -->
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span style="color: var(--primary-color); margin-right: 10px;">❌</span>
+        Jaki jest czas oczekiwania na zamówienie?
+        <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
+      </button>
+      <div class="faq-answer">
+        <p>W przypadku indywidualnego planu treningowego lub prowadzenia online czas oczekiwania to maksymalnie kilka dni roboczych od momentu w którym pieniądze trafią na konto.</p>
+        <p>Natomiast gotowy plan zostaje wysłany na maila przeważnie tego samego dnia od momentu w którym pieniądze trafią na konto.</p>
+      </div>
+    </div>
+    
+    <!-- Pytanie 2 -->
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span style="color: var(--primary-color); margin-right: 10px;">❌</span>
+        Jakie są metody płatności?
+        <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Akceptujemy następujące metody płatności:</p>
+        <ul style="list-style-type: disc; padding-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Przelewy bankowe</li>
+          <li>Płatności online (Stripe)</li>
+          <li>Blik</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Pytanie 3 -->
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span style="color: var(--primary-color); margin-right: 10px;">❌</span>
+        Który plan treningowy powinienem wybrać?
+        <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Wybór planu zależy od Twoich celów i doświadczenia:</p>
+        <ul style="list-style-type: disc; padding-left: 1.5rem; margin-top: 0.5rem;">
+          <li><strong>Plan dla początkujących</strong> - jeśli dopiero zaczynasz przygodę z treningami</li>
+          <li><strong>Indywidualny Plan Treningowy</strong> - jeśli masz już doświadczenie i potrzebujesz spersonalizowanego programu</li>
+          <li><strong>Plan + prowadzenie online</strong> - jeśli chcesz pełnego wsparcia trenerskiego</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Pytanie 4 -->
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span style="color: var(--primary-color); margin-right: 10px;">❌</span>
+        Jak przebiega tworzenie indywidualnego planu treningowego?
+        <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Proces tworzenia planu:</p>
+        <ol style="padding-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Wypełniasz ankietę z informacjami o Twoich celach, doświadczeniu i dostępnym sprzęcie</li>
+          <li>Analizuję Twoje potrzeby i możliwości</li>
+          <li>Tworzę spersonalizowany plan treningowy</li>
+          <li>Otrzymujesz gotowy plan na maila wraz z instrukcjami</li>
+        </ol>
+      </div>
+    </div>
+    
+    <!-- Pytanie 5 -->
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span style="color: var(--primary-color); margin-right: 10px;">❌</span>
+        Gdzie mogę napisać w razie pytań?
+        <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Możesz skontaktować się ze mną przez:</p>
+        <ul style="list-style-type: disc; padding-left: 1.5rem; margin-top: 0.5rem;">
+          <li>Email: <a href="mailto:adriancalisthenics1@gmail.com" style="color: var(--primary-color);">adriancalisthenics1@gmail.com</a></li>
+          <li>Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" style="color: var(--primary-color);">@adrian_calisthenics1</a></li>
+          <li>Bezpośrednio po zakupie planu z prowadzeniem online</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
   <!-- Sekcja "Kontakt" -->
   <section class="section" id="kontakt">
     <h2 class="section-title">Kontakt</h2>
     <p>Email: adriancalisthenics1@gmail.com</p>
     <p>Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" style="color:var(--primary-color)">@adrian_calisthenics1</a></p>
   </section>
+
+  <script>
+  function toggleFaq(button) {
+    const faqItem = button.parentElement;
+    faqItem.classList.toggle('active');
+  }
+</script>
 
   <!-- Stopka -->
   <footer>
