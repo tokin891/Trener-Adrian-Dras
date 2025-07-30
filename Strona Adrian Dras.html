@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trener Max - Plany treningowe</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
+    }
+    header {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('header-background.jpg') no-repeat center center/cover;
+      filter: brightness(50%);
+      z-index: -1;
+    }
+    header h1 {
+      font-size: 3em;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      border-radius: 10px;
+      z-index: 1;
+    }
+    nav {
+      background-color: #1c1c1c;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #cc0000;
+    }
+    .section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+    .plans {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .plan {
+      background: #1c1c1c;
+      border: 2px solid #cc0000;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 0 15px rgba(204, 0, 0, 0.3);
+      width: 280px;
+      text-align: center;
+    }
+    .plan h3 {
+      margin-top: 0;
+      color: #cc0000;
+    }
+    .plan button {
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .plan button:hover {
+      background-color: #990000;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+    }
+    h2 {
+      color: #cc0000;
+    }
+    a {
+      color: #cc0000;
+    }
+    blockquote {
+      font-style: italic;
+      margin: 1rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid #cc0000;
+    }
+    @media(max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Zmień swoje ciało z Trenerem Maxem</h1>
+  </header>
+
+  <nav>
+    <a href="#plany">Plany</a>
+    <a href="#kim-jestem">Kim jestem</a>
+    <a href="#dlaczego-ja">Dlaczego ja</a>
+    <a href="#opinie">Opinie</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+
+  <section class="section" id="plany">
+    <h2 style="text-align:center;">Wybierz swój plan</h2>
+    <img src="plan-treningowy.jpg" alt="Plany treningowe">
+    <div class="plans">
+      <div class="plan">
+        <h3>Plan na masę</h3>
+        <p>Intensywny program budujący masę mięśniową.</p>
+        <p><strong>59 zł</strong></p>
+        <button onclick="location.href='#'">Kup teraz</button>
+      </div>
+      <div class="plan">
+        <h3>Plan redukcyjny</h3>
+        <p>Spal tłuszcz i odkryj mięśnie.</p>
+        <p><strong>49 zł</strong></p>
+        <button onclick="location.href='#'">Kup teraz</button>
+      </div>
+      <div class="plan">
+        <h3>Plan dla początkujących</h3>
+        <p>Idealny na start – bez sprzętu.</p>
+        <p><strong>39 zł</strong></p>
+        <button onclick="location.href='#'">Kup teraz</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="kim-jestem">
+    <h2>Kim jestem</h2>
+    <img src="trener-max.jpg" alt="Trener Max">
+    <p>Cześć! Nazywam się Max i od 5 lat pomagam ludziom osiągać swoje cele sylwetkowe. Jestem certyfikowanym trenerem personalnym i dietetykiem. Moją misją jest pomaganie ludziom w budowaniu pewności siebie poprzez zdrowy styl życia.</p>
+  </section>
+
+  <section class="section" id="dlaczego-ja">
+    <h2>Dlaczego ja?</h2>
+    <img src="motywacja.jpg" alt="Dlaczego warto">
+    <ul>
+      <li>Indywidualne podejście do każdego klienta</li>
+      <li>Plany oparte na nauce i doświadczeniu</li>
+      <li>Stałe wsparcie i motywacja</li>
+      <li>Ponad 300 zadowolonych klientów</li>
+    </ul>
+  </section>
+
+  <section class="section" id="opinie">
+    <h2>Opinie klientów</h2>
+    <img src="opinie.jpg" alt="Opinie klientów">
+    <blockquote>"Dzięki planowi Maxa schudłam 12 kg w 3 miesiące – polecam każdemu!" – Anna</blockquote>
+    <blockquote>"Profesjonalne podejście i świetna motywacja. Trener Max zna się na rzeczy." – Michał</blockquote>
+    <blockquote>"Plan dla początkujących był idealny – w końcu coś prostego, co działa." – Kasia</blockquote>
+  </section>
+
+  <section class="section" id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Email: trenermax@example.com</p>
+    <p>Instagram: <a href="https://instagram.com/trenermax" target="_blank">@trenermax</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Trener Max. Wszelkie prawa zastrzeżone.
+  </footer>
+
+</body>
+</html>
