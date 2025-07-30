@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trener Adrian Dras - Plany treningowe</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
+    /* === Zmienne === */
     :root {
       --primary-color: #cc0000;
       --primary-dark: #990000;
@@ -15,6 +17,7 @@
       --text-secondary: #aaa;
     }
     
+    /* === Reset === */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -22,7 +25,6 @@
     }
     
     body {
-      margin: 0;
       font-family: 'Poppins', Arial, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -30,12 +32,13 @@
       overflow-x: hidden;
     }
     
+    /* === Nagłówek === */
     header {
       position: relative;
-      height: 100vh; /* Zwiększenie na pełną wysokość viewport */
-      min-height: 600px; /* Większa minimalna wysokość */
+      height: 100vh;
+      min-height: 600px;
       display: flex;
-      flex-direction: column; /* Układ kolumnowy */
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
@@ -56,47 +59,41 @@
       animation: fadeInBackground 1.5s ease-out forwards;
     }
     
-    @keyframes fadeInBackground {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
     .header-content {
       max-width: 800px;
       padding: 0 2rem;
       animation: slideUp 1s ease-out 0.3s both;
     }
     
-    @keyframes slideUp {
-      from { 
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to { 
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    #start-btn {
+    /* === Przyciski === */
+    .btn {
+      display: inline-block;
       font-weight: 700;
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       background-color: var(--primary-color);
-      border: none;
-      padding: 1.2rem 3.5rem;
-      border-radius: 12px;
       color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      box-shadow: 0 0 25px var(--primary-color);
-      transition: all 0.4s ease;
-      z-index: 1;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 15px rgba(204, 0, 0, 0.4);
+      text-align: center;
     }
     
-    #start-btn::before {
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(204, 0, 0, 0.6);
+    }
+    
+    .btn:active {
+      transform: translateY(1px);
+    }
+    
+    .btn::after {
       content: "";
       position: absolute;
       top: 0;
@@ -107,49 +104,38 @@
       transition: 0.5s;
     }
     
-    #start-btn:hover {
-      background-color: var(--primary-dark);
-      box-shadow: 0 0 40px var(--primary-dark);
-      transform: translateY(-5px);
-    }
-    
-    #start-btn:hover::before {
+    .btn:hover::after {
       left: 100%;
     }
     
-    .scroll-down {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 1.5rem;
-      animation: bounce 2s infinite;
-      cursor: pointer;
-      z-index: 1;
+    .btn-large {
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      padding: 1.2rem 3.5rem;
+      border-radius: 12px;
     }
     
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) translateX(-50%);
-      }
-      40% {
-        transform: translateY(-20px) translateX(-50%);
-      }
-      60% {
-        transform: translateY(-10px) translateX(-50%);
-      }
+    .btn-medium {
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
     }
     
+    .btn-block {
+      display: block;
+      width: 100%;
+      padding: 1rem !important;
+      font-size: 1.1rem !important;
+      margin-top: auto;
+    }
+    
+    /* === Nawigacja === */
     nav {
-      background-color: var(--card-bg);
+      background-color: rgba(28, 28, 28, 0.9);
       position: sticky;
       top: 0;
       z-index: 999;
       width: 100%;
       padding: 0.5rem 0;
       backdrop-filter: blur(5px);
-      background-color: rgba(28, 28, 28, 0.9);
     }
 
     .nav-container {
@@ -160,7 +146,6 @@
       max-width: 1000px;
       margin: 0 auto;
       padding: 0 1rem;
-      width: 100%;
     }
 
     nav a {
@@ -170,15 +155,31 @@
       padding: 0.5rem 1rem;
       border-radius: 5px;
       transition: all 0.3s ease;
-      white-space: nowrap;
       font-size: clamp(0.8rem, 3vw, 1rem);
+      position: relative;
     }
 
     nav a:hover {
       color: var(--primary-color);
-      background-color: rgba(204, 0, 0, 0.1);
     }
 
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: calc(100% - 2rem);
+      left: 1rem;
+    }
+    
+    /* === Sekcje === */
     .section {
       padding: 3rem 1.5rem;
       max-width: 1000px;
@@ -191,9 +192,8 @@
       text-align: center;
       margin-bottom: 2rem;
       position: relative;
-      line-height: 1.3;
     }
-
+    
     .section-title::after {
       content: "";
       display: block;
@@ -202,13 +202,13 @@
       background: var(--primary-color);
       margin: 1rem auto 0;
     }
-
+    
+    /* === Intro === */
     .intro-container {
       background-color: var(--card-bg);
       border-radius: 15px;
       padding: 2rem;
       box-shadow: 0 0 30px rgba(0,0,0,0.7);
-      border: 1px solid #333;
       margin: 3rem auto;
     }
 
@@ -219,104 +219,11 @@
       gap: 2rem;
     }
 
-    .intro-image-container {
-      width: 100%;
-      max-width: 350px;
-    }
-
-    .portrait-image {
-      width: 100%;
-      height: auto;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 15px;
-      border: 4px solid var(--primary-color);
-      box-shadow: 0 0 30px rgba(204, 0, 0, 0.6);
-    }
-
-    .intro-text {
-      width: 100%;
-    }
-    
-    .intro-text h3 {
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      margin-bottom: 1rem;
-      color: var(--text-color);
-    }
-
-    .highlight {
-      color: var(--primary-color);
-      font-weight: 700;
-    }
-
-    .lead {
-      font-size: clamp(1rem, 3vw, 1.3rem);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      color: var(--text-color);
-    }
-
-    .consultation-btn {
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      font-size: clamp(1rem, 3vw, 1.2rem);
-      font-weight: 700;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-top: 1.5rem;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      box-shadow: 0 5px 20px rgba(204, 0, 0, 0.4);
-      width: 100%;
-      max-width: 300px;
-      display: block;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .consultation-btn:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(204, 0, 0, 0.5);
-    }
-
-    .section img:not(.portrait-image, .opinie-image) {
-      width: 100%;
-      border-radius: 15px;
-      margin: 1.5rem 0;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-
-    .plan-features {
-      list-style-type: none;
-      margin: 1.5rem 0;
-    }
-
-    .plan-features li {
-      margin-bottom: 0.8rem;
-      position: relative;
-      padding-left: 1.8rem;
-      color: var(--text-color);
-      font-size: clamp(0.9rem, 3vw, 1rem);
-    }
-
-    .plan-features li::before {
-      content: "✓";
-      color: var(--primary-color);
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-    }
-
-    .plans {
-      display: flex;
-      flex-wrap: wrap;
+    /* === Plany treningowe === */
+    .plans-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      justify-content: center;
       margin-top: 2rem;
     }
 
@@ -325,14 +232,13 @@
       border: 2px solid var(--primary-color);
       border-radius: 15px;
       padding: 1.5rem;
-      box-shadow: 0 10px 25px rgba(204, 0, 0, 0.2);
-      width: 100%;
-      max-width: 350px;
-      text-align: center;
+      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
       z-index: 1;
-      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .plan:hover {
@@ -366,309 +272,236 @@
       background-image: url('Images/plan3-bg.png');
     }
 
-    .plan-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .plan h3 {
-      margin-top: 0;
-      color: var(--text-color);
-      font-size: clamp(1.2rem, 3vw, 1.5rem);
+    .plan-header {
       margin-bottom: 1.5rem;
-      position: relative;
       padding-bottom: 1rem;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      border-bottom: 2px solid var(--text-color);
     }
 
-    .plan h3::after {
-      content: "";
+    .plan-features {
+      list-style-type: none;
+      margin: 1.5rem 0;
+      flex-grow: 1;
+    }
+
+    .plan-features li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.8rem;
+      position: relative;
+    }
+
+    .plan-features li::before {
+      content: "✓";
+      color: var(--primary-color);
       position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50px;
-      height: 2px;
-      background: var(--text-color);
+      left: 0;
+      font-weight: bold;
     }
 
-    .plan .price {
+    .price {
       font-size: clamp(1.8rem, 5vw, 2.5rem);
       font-weight: 700;
-      color: #fff;
       margin: 1.5rem 0;
       display: block;
+      color: white;
     }
 
-    .plan .price::before {
+    .price::before {
       content: "Tylko";
       display: block;
-      font-size: clamp(0.9rem, 3vw, 1rem);
+      font-size: 1rem;
       color: var(--text-secondary);
       font-weight: 400;
     }
 
-    .plan button {
-      font-family: 'Poppins', Arial, sans-serif;
-      font-weight: 700;
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: 100%;
-      font-size: clamp(1rem, 3vw, 1.1rem);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 1.5rem;
-      box-shadow: 0 5px 15px rgba(204, 0, 0, 0.3);
-    }
-
-    .plan button:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(204, 0, 0, 0.4);
-    }
-
-    .opinie-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    /* === Opinie === */
+    .opinions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
 
-    .opinie-item {
-      flex: 1 1 300px;
-      max-width: 350px;
+    .opinion-img {
+      width: 100%;
+      border-radius: 15px;
       transition: transform 0.3s ease;
     }
 
-    .opinie-item:hover {
-      transform: scale(1.03);
+    .opinion-img:hover {
+      transform: scale(1.02);
     }
 
-    .opinie-image {
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      border: 2px solid var(--primary-color);
-      box-shadow: 0 5px 20px rgba(204, 0, 0, 0.3);
-    }
-
+    /* === Stopka === */
     footer {
       text-align: center;
       padding: 2rem 1rem;
       background-color: #222;
-      color: white;
       margin-top: 3rem;
     }
+
+    /* === Animacje === */
+    @keyframes fadeInBackground {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
     
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #ff3333;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
-    .fade-in {
-      animation: fadeIn 0.8s ease forwards;
-    }
-    
-    .delay-1 {
-      animation-delay: 0.2s;
-    }
-    
-    .delay-2 {
-      animation-delay: 0.4s;
-    }
-    
-    .delay-3 {
-      animation-delay: 0.6s;
+
+    .pulse {
+      animation: pulse 2s infinite;
     }
 
-    /* Media Queries */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* === Responsywność === */
     @media (min-width: 768px) {
-      header {
-        height: 80vh;
-      }
-      
       .intro-content {
         flex-direction: row;
-        align-items: center;
       }
       
-      .intro-image-container {
-        flex: 0 0 35%;
-      }
-      
-      .intro-text {
-        flex: 1;
-      }
-      
-      .consultation-btn {
-        width: auto;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      
-      .nav-container {
-        gap: 1rem;
-      }
-      
-      nav a {
-        padding: 0.5rem 1.2rem;
-      }
-    }
-    
-    @media (min-width: 992px) {
-      .section {
-        padding: 4rem 2rem;
+      header {
+        height: 80vh;
       }
     }
   </style>
 </head>
 <body>
 
-  <header class="fade-in">
+  <!-- Nagłówek -->
+  <header>
     <div class="header-content">
-      <h1 style="font-size: clamp(1.8rem, 6vw, 3rem); margin-bottom: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
-        Transformacja Twojego ciała zaczyna się tutaj
-      </h1>
-      <p style="font-size: clamp(1rem, 3vw, 1.3rem); margin-bottom: 2.5rem; text-shadow: 0 1px 5px rgba(0,0,0,0.5);">
-        Profesjonalne plany treningowe dopasowane do Twoich potrzeb
-      </p>
-      <button id="start-btn" onclick="location.href='#plany'">Zacznij przemianę już dziś</button>
-    </div>
-    <div class="scroll-down" onclick="location.href='#kim-jestem'">
-      <i class="fas fa-chevron-down"></i> <!-- Wymaga Font Awesome -->
+      <h1>Transformacja Twojego ciała zaczyna się tutaj</h1>
+      <p>Profesjonalne plany treningowe dopasowane do Twoich potrzeb</p>
+      <br>
+      <button class="btn btn-large pulse" onclick="location.href='#plany'">Zacznij przemianę już dziś</button>
     </div>
   </header>
 
+  <!-- Nawigacja -->
   <nav>
     <div class="nav-container">
-      <a href="#plany" class="fade-in delay-1">Plany</a>
-      <a href="#kim-jestem" class="fade-in delay-1">Kim jestem</a>
-      <a href="#dlaczego-ja" class="fade-in delay-2">Dlaczego ja</a>
-      <a href="#opinie" class="fade-in delay-2">Opinie</a>
-      <a href="#kontakt" class="fade-in delay-3">Kontakt</a>
+      <a href="#plany">Plany</a>
+      <a href="#kim-jestem">Kim jestem</a>
+      <a href="#dlaczego-ja">Dlaczego ja</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#kontakt">Kontakt</a>
     </div>
   </nav>
 
+  <!-- Sekcja "Kim jestem" -->
   <section class="section" id="kim-jestem">
-    <div class="intro-container fade-in">
+    <div class="intro-container">
       <h2 class="section-title">Wprowadzenie</h2>
       <div class="intro-content">
-        <div class="intro-image-container">
-          <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Adrian Dras" class="portrait-image" />
+        <div>
+          <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Adrian Dras" width="350" style="border-radius:15px;border:4px solid var(--primary-color);box-shadow:0 0 30px rgba(204, 0, 0, 0.6)" />
         </div>
-        <div class="intro-text">
-          <h3>Cześć, jestem <span class="highlight">Adrian Dras</span></h3>
-          <p class="lead">Moja misja? Sprawić, by droga do Twojego wymarzonego ciała była jasna oraz motywująca.</p>
-          <p>Każdy plan tworzę od podstaw, biorąc pod uwagę Twój unikalny styl życia, doświadczenie treningowe i dostępny sprzęt. W moim podejściu nie ma miejsca na szablony - tylko spersonalizowane rozwiązania dopasowane do Ciebie. Twój sukces zaczyna się teraz - podejmij decyzję i pozwól mi poprowadzić Cię do wymarzonych rezultatów!</p>
-          <button class="consultation-btn" onclick="location.href='#plany'">Zobacz ofertę</button>
+        <div>
+          <h3>Cześć, jestem <span style="color:var(--primary-color);font-weight:700">Adrian Dras</span></h3>
+          <p style="font-size:1.2rem;margin-bottom:1.5rem">Moja misja? Sprawić, by droga do Twojego wymarzonego ciała była jasna oraz motywująca.</p>
+          <p>Każdy plan tworzę od podstaw, biorąc pod uwagę Twój unikalny styl życia, doświadczenie treningowe i dostępny sprzęt.</p>
+          <button class="btn btn-medium" style="margin-top:1.5rem" onclick="location.href='#plany'">Zobacz ofertę</button>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Sekcja "Dlaczego ja" -->
   <section class="section" id="dlaczego-ja">
-    <h2 class="section-title fade-in">Dlaczego ja?</h2>
-    <img src="Images/5cae5195-e932-4139-92ac-c51663a2abc0.jpg" alt="Dlaczego warto" class="fade-in delay-1" />
-    <ul class="plan-features fade-in delay-2">
-      <li>Indywidualne podejście do każdego klienta</li>
-      <li>Plany oparte na nauce i doświadczeniu</li>
-      <li>Stałe wsparcie i motywacja</li>
-      <li>Ponad 300 zadowolonych klientów</li>
+    <h2 class="section-title">Dlaczego ja?</h2>
+    <img src="Images/5cae5195-e932-4139-92ac-c51663a2abc0.jpg" alt="Dlaczego warto" style="width:100%;border-radius:15px;margin:1.5rem 0" />
+    <ul style="list-style-type:none;margin:1.5rem 0">
+      <li style="position:relative;padding-left:1.8rem"><span style="color:var(--primary-color);position:absolute;left:0">✓</span> Indywidualne podejście do każdego klienta</li>
+      <li style="position:relative;padding-left:1.8rem"><span style="color:var(--primary-color);position:absolute;left:0">✓</span> Plany oparte na nauce i doświadczeniu</li>
+      <li style="position:relative;padding-left:1.8rem"><span style="color:var(--primary-color);position:absolute;left:0">✓</span> Stałe wsparcie i motywacja</li>
+      <li style="position:relative;padding-left:1.8rem"><span style="color:var(--primary-color);position:absolute;left:0">✓</span> Ponad 300 zadowolonych klientów</li>
     </ul>
   </section>
 
+  <!-- Sekcja "Opinie" -->
   <section class="section" id="opinie">
-    <h2 class="section-title fade-in">Opinie klientów</h2>
-    <div class="opinie-container">
-      <div class="opinie-item fade-in delay-1">
-        <img src="Images/opinia1.png" alt="Opinia klienta 1" class="opinie-image" />
-      </div>
-      <div class="opinie-item fade-in delay-2">
-        <img src="Images/Opinia2.png" alt="Opinia klienta 2" class="opinie-image" />
-      </div>
-      <div class="opinie-item fade-in delay-3">
-        <img src="Images/Opinia3.png" alt="Opinia klienta 3" class="opinie-image" />
-      </div>
-      <div class="opinie-item fade-in delay-1">
-        <img src="Images/Opinia4.png" alt="Opinia klienta 4" class="opinie-image" />
-      </div>
+    <h2 class="section-title">Opinie klientów</h2>
+    <div class="opinions-grid">
+      <img src="Images/opinia1.png" alt="Opinia klienta" class="opinion-img" />
+      <img src="Images/Opinia2.png" alt="Opinia klienta" class="opinion-img" />
+      <img src="Images/Opinia3.png" alt="Opinia klienta" class="opinion-img" />
+      <img src="Images/Opinia4.png" alt="Opinia klienta" class="opinion-img" />
     </div>
   </section>
 
+  <!-- Sekcja "Plany" -->
   <section class="section" id="plany">
-    <h2 class="section-title fade-in">Wybierz swój plan</h2>
-    <img src="Images/54dad85f-f276-4d48-8caa-bf0533cbe768.jpg" alt="Plany treningowe" class="fade-in delay-1" />
-    <div class="plans">
-      <div class="plan fade-in delay-1">
-        <div class="plan-content">
+    <h2 class="section-title">Wybierz swój plan</h2>
+    <img src="Images/54dad85f-f276-4d48-8caa-bf0533cbe768.jpg" alt="Plany treningowe" style="width:100%;border-radius:15px;margin:1.5rem 0" />
+    
+    <div class="plans-container">
+      <!-- Plan 1 -->
+      <div class="plan">
+        <div class="plan-header">
           <h3>Indywidualny Plan Treningowy + 1 miesiąc prowadzenia online</h3>
-          <ul class="plan-features">
-            <li>Pełna personalizacja planu</li>
-            <li>Dostosowany do Twoich celów</li>
-            <li>Miesięczne wsparcie trenera</li>
-            <li>Konsultacje online</li>
-            <li>Dostęp do zamkniętej grupy</li>
-          </ul>
-          <span class="price">250 zł</span>
-          <button onclick="location.href='https://buy.stripe.com/9B600kabw4Zn5aj0Yk8Ra02'">Kup teraz</button>
         </div>
+        <ul class="plan-features">
+          <li>Pełna personalizacja planu</li>
+          <li>Dostosowany do Twoich celów</li>
+          <li>Miesięczne wsparcie trenera</li>
+          <li>Konsultacje online</li>
+          <li>Dostęp do zamkniętej grupy</li>
+        </ul>
+        <span class="price">250 zł</span>
+        <button class="btn btn-block" onclick="location.href='https://buy.stripe.com/9B600kabw4Zn5aj0Yk8Ra02'">Kup teraz</button>
       </div>
-      <div class="plan fade-in delay-2">
-        <div class="plan-content">
+      
+      <!-- Plan 2 -->
+      <div class="plan">
+        <div class="plan-header">
           <h3>Indywidualny Plan Treningowy</h3>
-          <ul class="plan-features">
-            <li>Spersonalizowany plan treningowy</li>
-            <li>Dostosowany do Twojego poziomu</li>
-            <li>Instrukcje wykonania ćwiczeń</li>
-            <li>Modyfikacje co 4 tygodnie</li>
-          </ul>
-          <span class="price">150 zł</span>
-          <button onclick="window.location.href='https://buy.stripe.com/4gMeVefvQ4ZnbyH9uQ8Ra01'">Kup teraz</button>
         </div>
+        <ul class="plan-features">
+          <li>Spersonalizowany plan treningowy</li>
+          <li>Dostosowany do Twojego poziomu</li>
+          <li>Instrukcje wykonania ćwiczeń</li>
+          <li>Modyfikacje co 4 tygodnie</li>
+        </ul>
+        <span class="price">150 zł</span>
+        <button class="btn btn-block" onclick="window.location.href='https://buy.stripe.com/4gMeVefvQ4ZnbyH9uQ8Ra01'">Kup teraz</button>
       </div>
-      <div class="plan fade-in delay-3">
-        <div class="plan-content">
+      
+      <!-- Plan 3 -->
+      <div class="plan">
+        <div class="plan-header">
           <h3>Plan dla początkujących</h3>
-          <ul class="plan-features">
-            <li>Łatwy start z treningami</li>
-            <li>Bez konieczności sprzętu</li>
-            <li>Stopniowy wzrost intensywności</li>
-            <li>Podstawy prawidłowej techniki</li>
-          </ul>
-          <span class="price">50 zł</span>
-          <button onclick="location.href='#'">Kup teraz</button>
         </div>
+        <ul class="plan-features">
+          <li>Łatwy start z treningami</li>
+          <li>Bez konieczności sprzętu</li>
+          <li>Stopniowy wzrost intensywności</li>
+          <li>Podstawy prawidłowej techniki</li>
+        </ul>
+        <span class="price">50 zł</span>
+        <button class="btn btn-block" onclick="location.href='#'">Kup teraz</button>
       </div>
     </div>
   </section>
 
+  <!-- Sekcja "Kontakt" -->
   <section class="section" id="kontakt">
-    <h2 class="section-title fade-in">Kontakt</h2>
-    <p class="fade-in delay-1">Email: adriancalisthenics1@gmail.com</p>
-    <p class="fade-in delay-2">Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank">@adrian_calisthenics1</a></p>
+    <h2 class="section-title">Kontakt</h2>
+    <p>Email: adriancalisthenics1@gmail.com</p>
+    <p>Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" style="color:var(--primary-color)">@adrian_calisthenics1</a></p>
   </section>
 
-  <footer class="fade-in delay-3">
+  <!-- Stopka -->
+  <footer>
     &copy; 2025 Trener Adrian Dras. Wszelkie prawa zastrzeżone.
   </footer>
 
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
