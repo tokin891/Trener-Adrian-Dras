@@ -52,23 +52,61 @@
       box-shadow: 0 0 30px #990000;
     }
     nav {
-      background-color: #1c1c1c;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    nav a {
-      color: #f0f0f0;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    nav a:hover {
-      color: #cc0000;
-    }
+  background-color: #1c1c1c;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  color: #cc0000;
+  background-color: rgba(204, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    gap: 0.5rem;
+    padding: 0.5rem;
+    justify-content: space-around;
+  }
+  
+  nav a {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    flex: 1;
+    text-align: center;
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  nav a {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.3rem;
+  }
+}
     .section {
       padding: 2rem;
       max-width: 1000px;
@@ -130,6 +168,65 @@
       padding-left: 1rem;
       border-left: 3px solid #cc0000;
     }
+
+    /* NOWE STYLE DLA SEKCJI "KIM JESTEM" */
+    .intro-container {
+      background-color: #1c1c1c;
+      border-radius: 10px;
+      padding: 2.5rem;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      border: 1px solid #333;
+    }
+    .intro-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+    .intro-image-container {
+      flex: 0 0 35%;
+      min-width: 250px;
+    }
+    .portrait-image {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 4px solid #cc0000;
+      box-shadow: 0 0 25px rgba(204, 0, 0, 0.6);
+    }
+    .intro-text {
+      flex: 1;
+    }
+    .highlight {
+      color: #cc0000;
+      font-weight: 700;
+    }
+    .lead {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .consultation-btn {
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .consultation-btn:hover {
+      background-color: #990000;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(204, 0, 0, 0.4);
+    }
+
     @media(max-width: 600px) {
       header {
         height: 60vh;
@@ -143,86 +240,62 @@
         gap: 1rem;
         text-align: center;
       }
+      /* Responsywność dla nowej sekcji */
+      .intro-content {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .intro-image-container {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+      .portrait-image {
+        max-height: 400px;
+      }
+      .consultation-btn {
+        width: 100%;
+        padding: 15px;
+      }
     }
-    .intro-container {
-  background-color: #1c1c1c;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-.intro-content {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.intro-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #cc0000;
-  box-shadow: 0 0 15px rgba(204, 0, 0, 0.5);
-}
-
-.intro-text {
-  flex: 1;
-}
-
-.highlight {
-  color: #cc0000;
-  font-weight: 700;
-}
-
-.lead {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-/* Responsywność */
-@media (max-width: 768px) {
-  .intro-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .intro-image {
-    margin-bottom: 1.5rem;
-  }
-}
   </style>
 </head>
 <body>
 
   <header>
-    <button id="start-btn" onclick="location.href='#plany'">Zacznij przemianę już</button>
+    <button id="start-btn" onclick="location.href='#plany'">Zacznij przemianę już dziś</button>
   </header>
 
   <nav>
-    <a href="#plany">Plany</a>
-    <a href="#kim-jestem">Kim jestem</a>
-    <a href="#dlaczego-ja">Dlaczego ja</a>
-    <a href="#opinie">Opinie</a>
-    <a href="#kontakt">Kontakt</a>
+    <div class="nav-container">
+      <a href="#plany">Plany</a>
+      <a href="#kim-jestem">Kim jestem</a>
+      <a href="#dlaczego-ja">Dlaczego ja</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
   </nav>
 
-   <section class="section" id="kim-jestem">
-  <div class="intro-container">
-    <h2>Wprowadzenie</h2>
-    <div class="intro-content">
-      <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Maciej Przeniosło" class="intro-image" />
-      <div class="intro-text">
+  <section class="section" id="kim-jestem">
+    <div class="intro-container">
+      <h2>Wprowadzenie</h2>
+      <div class="intro-content">
+        <div class="intro-image-container">
+          <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Maciej Przeniosło" class="portrait-image" />
+        </div>
+        <div class="intro-text">
           <h3>Cześć, jestem <span class="highlight">Adrian Dras</span></h3>
-          <p class="lead">Mam tylko jedno zadanie - pokazać Ci jak proste i przyjemne może być osiąganie Twojego celu.</p>
-          <p>Współpraca ze mną jest w pełni spersonalizowana, dzięki czemu jestem w stanie dostosować trening pod Twój aktualny styl życia, poziom zaawansowania czy nawet posiadany sprzęt treningowy. Nie czekaj na odpowiedni moment, zacznij działać już dziś i osiągnij najlepsze efekty pod moim okiem!</p>
+          <p class="lead">Moja misja? Sprawić, by droga do Twojego wymarzonego ciała była jasna oraz motywująca.</p>
+  <p>Każdy plan tworzę od podstaw, biorąc pod uwagę Twój unikalny styl życia, doświadczenie treningowe i dostępny sprzęt. W moim podejściu nie ma miejsca na szablony - tylko spersonalizowane rozwiązania dopasowane do Ciebie. Twój sukces zaczyna się teraz - podejmij decyzję i pozwól mi poprowadzić Cię do wymarzonych rezultatów!</p>
+          <button class="consultation-btn" onclick="location.href='#kontakt'">Umów konsultację</button>
         </div>
       </div>
     </div>
   </section>
+
   <section class="section" id="dlaczego-ja">
     <h2>Dlaczego ja?</h2>
-    <img src="motywacja.jpg" alt="Dlaczego warto" />
+    <img src="Images/5cae5195-e932-4139-92ac-c51663a2abc0.jpg" alt="Dlaczego warto" />
     <ul>
       <li>Indywidualne podejście do każdego klienta</li>
       <li>Plany oparte na nauce i doświadczeniu</li>
