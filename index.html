@@ -6,415 +6,7 @@
   <title>Trener Adrian Dras - Plany treningowe</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <style>
-    /* === Zmienne === */
-    :root {
-      --primary-color: #cc0000;
-      --primary-dark: #990000;
-      --bg-color: #111;
-      --card-bg: #1c1c1c;
-      --text-color: #f0f0f0;
-      --text-secondary: #aaa;
-    }
-    
-    /* === Reset === */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    
-    /* === Nagłówek === */
-    header {
-      position: relative;
-      height: 100vh;
-      min-height: 600px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      overflow: hidden;
-    }
-    
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('Images/d79aeced-35df-453b-bc75-746e2f7a21a7.jpg') no-repeat center center/cover;
-      filter: brightness(40%) contrast(110%);
-      z-index: -1;
-      animation: fadeInBackground 1.5s ease-out forwards;
-    }
-    
-    .header-content {
-      max-width: 800px;
-      padding: 0 2rem;
-      animation: slideUp 1s ease-out 0.3s both;
-    }
-    
-    /* === Przyciski === */
-    .btn {
-      display: inline-block;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(204, 0, 0, 0.4);
-      text-align: center;
-    }
-    
-    .btn:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(204, 0, 0, 0.6);
-    }
-    
-    .btn:active {
-      transform: translateY(1px);
-    }
-    
-    .btn::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: 0.5s;
-    }
-    
-    .btn:hover::after {
-      left: 100%;
-    }
-    
-    .btn-large {
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
-      padding: 1.2rem 3.5rem;
-      border-radius: 12px;
-    }
-    
-    .btn-medium {
-      font-size: 1.1rem;
-      padding: 1rem 2rem;
-    }
-    
-    .btn-block {
-      display: block;
-      width: 100%;
-      padding: 1rem !important;
-      font-size: 1.1rem !important;
-      margin-top: auto;
-    }
-    
-    /* === Nawigacja === */
-    nav {
-      background-color: rgba(28, 28, 28, 0.9);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      width: 100%;
-      padding: 0.5rem 0;
-      backdrop-filter: blur(5px);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-      font-size: clamp(0.8rem, 3vw, 1rem);
-      position: relative;
-    }
-
-    nav a:hover {
-      color: var(--primary-color);
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--primary-color);
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover::after {
-      width: calc(100% - 2rem);
-      left: 1rem;
-    }
-    
-    /* === Sekcje === */
-    .section {
-      padding: 3rem 1.5rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    
-    .section-title {
-      color: var(--primary-color);
-      font-size: clamp(1.8rem, 5vw, 2.5rem);
-      text-align: center;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-    
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 3px;
-      background: var(--primary-color);
-      margin: 1rem auto 0;
-    }
-    
-    /* === Intro === */
-    .intro-container {
-      background-color: var(--card-bg);
-      border-radius: 15px;
-      padding: 2rem;
-      box-shadow: 0 0 30px rgba(0,0,0,0.7);
-      margin: 3rem auto;
-    }
-
-    .intro-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    /* === Plany treningowe === */
-    .plans-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .plan {
-      background: rgba(28, 28, 28, 0.8);
-      border: 2px solid var(--primary-color);
-      border-radius: 15px;
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .plan:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(204, 0, 0, 0.3);
-    }
-
-    .plan::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-size: cover;
-      background-position: center;
-      filter: blur(3px) brightness(0.4);
-      z-index: -1;
-      opacity: 0.7;
-    }
-
-    .plan:nth-child(1)::before {
-      background-image: url('Images/plan1-bg.png');
-    }
-
-    .plan:nth-child(2)::before {
-      background-image: url('Images/plan2-bg.png');
-    }
-
-    .plan:nth-child(3)::before {
-      background-image: url('Images/plan3-bg.png');
-    }
-
-    .plan-header {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid var(--text-color);
-    }
-
-    .plan-features {
-      list-style-type: none;
-      margin: 1.5rem 0;
-      flex-grow: 1;
-    }
-
-    .plan-features li {
-      margin-bottom: 0.8rem;
-      padding-left: 1.8rem;
-      position: relative;
-    }
-
-    .plan-features li::before {
-      content: "✓";
-      color: var(--primary-color);
-      position: absolute;
-      left: 0;
-      font-weight: bold;
-    }
-
-    .price {
-      font-size: clamp(1.8rem, 5vw, 2.5rem);
-      font-weight: 700;
-      margin: 1.5rem 0;
-      display: block;
-      color: white;
-    }
-
-    .price::before {
-      content: "Tylko";
-      display: block;
-      font-size: 1rem;
-      color: var(--text-secondary);
-      font-weight: 400;
-    }
-
-    .faq-item {
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(204, 0, 0, 0.2);
-    padding-bottom: 1rem;
-  }
-  
-  .faq-question {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    width: 100%;
-    text-align: left;
-    padding: 1rem 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s;
-  }
-  
-  .faq-question:hover {
-    color: var(--primary-color);
-  }
-  
-  .faq-answer {
-    color: var(--text-secondary);
-    padding: 0 1.5rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-  }
-  
-  .faq-item.active .faq-answer {
-    max-height: 500px;
-    padding: 0 1.5rem 1rem;
-  }
-  
-  .faq-item.active .faq-question i {
-    transform: rotate(180deg);
-  }
-
-    /* === Opinie === */
-    .opinions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .opinion-img {
-      width: 100%;
-      border-radius: 15px;
-      transition: transform 0.3s ease;
-    }
-
-    .opinion-img:hover {
-      transform: scale(1.02);
-    }
-
-    /* === Stopka === */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: #222;
-      margin-top: 3rem;
-    }
-
-    /* === Animacje === */
-    @keyframes fadeInBackground {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .pulse {
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    /* === Responsywność === */
-    @media (min-width: 768px) {
-      .intro-content {
-        flex-direction: row;
-      }
-      
-      header {
-        height: 80vh;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -424,7 +16,7 @@
       <h1>Transformacja Twojego ciała zaczyna się tutaj</h1>
       <p>Profesjonalne plany treningowe dopasowane do Twoich potrzeb</p>
       <br>
-      <button class="btn btn-large pulse" onclick="location.href='#plany'">Zacznij przemianę już dziś</button>
+      <button class="btn btn-large" onclick="location.href='#plany'">Zacznij przemianę już dziś</button>
     </div>
   </header>
 
@@ -443,16 +35,29 @@
   <!-- Sekcja "Kim jestem" -->
   <section class="section" id="kim-jestem">
     <div class="intro-container">
-      <h2 class="section-title">Wprowadzenie</h2>
+      <h2 class="section-title">Moja historia</h2>
       <div class="intro-content">
         <div>
-          <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Adrian Dras" width="350" style="border-radius:15px;border:4px solid var(--primary-color);box-shadow:0 0 30px rgba(204, 0, 0, 0.6)" />
+          <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Adrian Dras" width="350" class="intro-image" />
         </div>
         <div>
-          <h3>Cześć, jestem <span style="color:var(--primary-color);font-weight:700">Adrian Dras</span></h3>
-          <p style="font-size:1.2rem;margin-bottom:1.5rem">Moja misja? Sprawić, by droga do Twojego wymarzonego ciała była jasna oraz motywująca.</p>
-          <p>Każdy plan tworzę od podstaw, biorąc pod uwagę Twój unikalny styl życia, doświadczenie treningowe i dostępny sprzęt.</p>
-          <button class="btn btn-medium" style="margin-top:1.5rem" onclick="location.href='#plany'">Zobacz ofertę</button>
+          <h3>Cześć, jestem <span class="highlight" style="font-size: 25px;">Adrian Dras</span></h3>
+          <p class="intro-text">Moja misja? Sprawić, by droga do Twojego wymarzonego ciała była jasna oraz motywująca.</p>
+          
+          <div class="my-story">
+            <p>Zaczynałem dokładnie tam, gdzie być może jesteś teraz Ty. Z nadwagą i bez doświadczenia treningowego. Przez lata prób i błędów, samodzielnego szukania informacji i testowania różnych metod, odkryłem co naprawdę działa.</p>
+            
+            <p><strong>Moje doświadczenie:</strong></p>
+            <ul class="experience-list">
+              <li> 5 lat treningów siłowych</li>
+              <li> 2 lata specjalizacji w kalistenice</li>
+              <li> Przemiana z otyłej do wysportowanej sylwetki</li>
+            </ul>
+            
+            <p>Wiem jak to jest zaczynać od zera i jakie trudności napotykasz na swojej drodze. Dzięki mojemu doświadczeniu pomogę Ci uniknąć błędów, które sam popełniłem i osiągnąć efekty szybciej niż myślisz!</p>
+          </div>
+          
+          <button class="btn btn-medium" onclick="location.href='#plany'">Zobacz ofertę</button>
         </div>
       </div>
     </div>
@@ -461,14 +66,71 @@
   <!-- Sekcja "Dlaczego ja" -->
   <section class="section" id="dlaczego-ja">
     <h2 class="section-title">Dlaczego ja?</h2>
-    <img src="Images/5cae5195-e932-4139-92ac-c51663a2abc0.jpg" alt="Dlaczego warto" style="width:100%;border-radius:15px;margin:1.5rem 0" />
-    <ul style="list-style-type:none;margin:1.5rem 0">
-      <li style="position:relative;padding-left:1.8rem"><span style="color:var(--primary-color);position:absolute;left:0">✓</span> Indywidualne podejście do każdego klienta</li>
-      <li style="position:relative;padding-left:1.8rem"><span style="color:var(--primary-color);position:absolute;left:0">✓</span> Plany oparte na nauce i doświadczeniu</li>
-      <li style="position:relative;padding-left:1.8rem"><span style="color:var(--primary-color);position:absolute;left:0">✓</span> Stałe wsparcie i motywacja</li>
-      <li style="position:relative;padding-left:1.8rem"><span style="color:var(--primary-color);position:absolute;left:0">✓</span> Ponad 300 zadowolonych klientów</li>
+    <img src="Images/5cae5195-e932-4139-92ac-c51663a2abc0.jpg" alt="Dlaczego warto" class="section-image" />
+    <ul class="feature-list">
+      <li>Indywidualnie podchodzę do każdego klienta</li>
+      <li>Posiadam dużą wiedzę oraz cały czas uczę się nowych rzeczy</li>
+      <li>Oferuję stałe wsparcie i motywację</li>
+      <li>Jeśli coś nie jest zrozumiałe i potrzebujesz pomocy to wystarczy że napiszesz</li>
     </ul>
+
+    <!-- Sekcja Przemiany -->
+    <div class="transformation-section">
+      <div class="transformation-pair">
+        <div>
+          <h3>Moja przemiana</h3>
+          <p>Zobacz jak wyglądała moja droga od początkującego do obecnej formy:</p>
+          <div class="transformation-images">
+            <div>
+              <img src="Images/przed.jpg" alt="Przed przemianą" class="transformation-image"">
+              <p class="transformation-caption">Przed - początek mojej przygody</p>
+            </div>
+            <div>
+              <img src="Images/po.jpg" alt="Po przemianie" class="transformation-image">
+              <p class="transformation-caption">Po - efekty ciężkiej pracy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="transformation-pair">
+        <div>
+          <h3>Moje osiągnięcia w kalistenice</h3>
+          <p>Od podstawowych ćwiczeń do zaawansowanych elementów:</p>
+          <div class="transformation-images">
+            <div>
+              <img src="Images/kalistenika1.png" alt="Początki kalisteniki" class="transformation-image">
+              <p class="transformation-caption">Moje początki</p>
+            </div>
+            <div>
+              <img src="Images/kalistenika2.jpg" alt="Aktualny poziom" class="transformation-image">
+              <p class="transformation-caption">Obecny poziom</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <!-- Sekcja Statystyki -->
+  <section class="section stats-section" id="statystyki">
+    <h2 class="section-title">Moje osiągnięcia</h2>
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Zadowolonych klientów</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Lat doświadczenia</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2,000+</div>
+        <div class="stat-label">Społeczność</div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Sekcja "Opinie" -->
   <section class="section" id="opinie">
@@ -481,10 +143,122 @@
     </div>
   </section>
 
+
+  <script>
+    // Skrypt do obsługi karuzeli
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dotsContainer = document.querySelector('.testimonial-dots');
+    const prevBtn = document.querySelector('.testimonial-prev');
+    const nextBtn = document.querySelector('.testimonial-next');
+    let currentSlide = 0;
+
+    // Tworzenie kropek nawigacyjnych
+    slides.forEach((_, index) => {
+      const dot = document.createElement('span');
+      dot.classList.add('testimonial-dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.testimonial-dot');
+
+    // Funkcja do zmiany slajdu
+    function goToSlide(slideIndex) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      currentSlide = slideIndex;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    // Następny slajd
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      goToSlide(currentSlide);
+    }
+
+    // Poprzedni slajd
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      goToSlide(currentSlide);
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+  });
+  </script>
+
+  <!-- Nowa sekcja z karuzelą opinii -->
+  <section class="section testimonial-section">
+    <h2 class="section-title">Co mówią o mnie klienci</h2>
+    
+    <div class="testimonial-carousel">
+      <!-- Opinia 1 -->
+      <div class="testimonial-slide active">
+        <div class="testimonial-content">
+          <div class="testimonial-image-container">
+            <img src="Images/kuba.jpg" alt="Kuba" class="testimonial-image">
+          </div>
+          <div class="testimonial-text-container">
+            <p class="testimonial-text">
+              "Mega się cieszę że skorzystałem z twojej oferty Adrian. Bardzo mi to pomogło w rozbudowaniu pleców, gdzie miałem spore kompleksy, z których pomogłeś mi wyjść. Dużo się też dowiedziałem o kalistenice co i jak robić dzięki czemu znacznie poprawiłem swoje osiągi w staniu na rękach i pompkach. Widzę duży progres w sile jak i w sylwetce z czego jestem zadowolony bo plan spełnił moje oczekiwania. Podoba mi się również komunikacja z tobą jesteś często dostępny dla swoich klientów co jest naprawdę fajne i czuć że chcesz pomóc ludziom w zrealizowaniu swoich marzeń. Wielkie dzięki za pomoc i przekazanie cennej wiedzy"
+            </p>
+            <div class="testimonial-author">Kuba</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Opinia 2 -->
+      <div class="testimonial-slide">
+        <div class="testimonial-content">
+          <div class="testimonial-image-container">
+            <img src="Images/klient2.png" alt="m" class="testimonial-image">
+          </div>
+          <div class="testimonial-text-container">
+            <p class="testimonial-text">
+              "Masz tutaj dwa zdjęcia
+              Jeśli chodzi o sylwetkę to strasznie poleciała do góry
+              Jak zacząłem trenować tym planem
+              I jeszcze masa tak samo z twoich przepisów"
+            </p>
+            <div class="testimonial-author"></div>
+          </div>
+        </div>
+      </div>
+
+            <!-- Opinia 2 -->
+      <div class="testimonial-slide">
+        <div class="testimonial-content">
+          <div class="testimonial-image-container">
+            <img src="Images/klient3.png" alt="m" class="testimonial-image">
+          </div>
+          <div class="testimonial-text-container">
+            <p class="testimonial-text">
+              "Siema, chciałem pochwalić się jak wychodzi front lever od zera trenując z twoim planem, daleko do dobrej techniki ale jest postęp"
+            </p>
+            <div class="testimonial-author">Mikołaj</div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!-- Nawigacja -->
+      <div class="testimonial-nav">
+        <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="testimonial-dots"></div>
+        <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
   <!-- Sekcja "Plany" -->
   <section class="section" id="plany">
     <h2 class="section-title">Wybierz swój plan</h2>
-    <img src="Images/54dad85f-f276-4d48-8caa-bf0533cbe768.jpg" alt="Plany treningowe" style="width:100%;border-radius:15px;margin:1.5rem 0" />
+    <img src="Images/54dad85f-f276-4d48-8caa-bf0533cbe768.jpg" alt="Plany treningowe" class="section-image" />
     
     <div class="plans-container">
       <!-- Plan 1 -->
@@ -535,112 +309,114 @@
     </div>
   </section>
 
+  <!-- Sekcja FAQ -->
   <section class="section" id="faq">
-  <h2 class="section-title">Najczęściej zadawane pytania</h2>
-  
-  <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
-    <!-- Pytanie 1 -->
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span style="color: var(--primary-color); margin-right: 10px;">❌</span>
-        Jaki jest czas oczekiwania na zamówienie?
-        <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
-      </button>
-      <div class="faq-answer">
-        <p>W przypadku indywidualnego planu treningowego lub prowadzenia online czas oczekiwania to maksymalnie kilka dni roboczych od momentu w którym pieniądze trafią na konto.</p>
-        <p>Natomiast gotowy plan zostaje wysłany na maila przeważnie tego samego dnia od momentu w którym pieniądze trafią na konto.</p>
-      </div>
-    </div>
+    <h2 class="section-title">Najczęściej zadawane pytania</h2>
     
-    <!-- Pytanie 2 -->
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span style="color: var(--primary-color); margin-right: 10px;">❌</span>
-        Jakie są metody płatności?
-        <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Akceptujemy następujące metody płatności:</p>
-        <ul style="list-style-type: disc; padding-left: 1.5rem; margin-top: 0.5rem;">
-          <li>Przelewy bankowe</li>
-          <li>Płatności online (Stripe)</li>
-          <li>Blik</li>
-        </ul>
+    <div class="faq-container">
+      <!-- Pytanie 1 -->
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-icon">❌</span>
+          Jaki jest czas oczekiwania na zamówienie?
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>W przypadku indywidualnego planu treningowego lub prowadzenia online czas oczekiwania to maksymalnie kilka dni roboczych od momentu w którym pieniądze trafią na konto.</p>
+          <p>Natomiast gotowy plan zostaje wysłany na maila przeważnie tego samego dnia od momentu w którym pieniądze trafią na konto.</p>
+        </div>
+      </div>
+      
+      <!-- Pytanie 2 -->
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-icon">❌</span>
+          Jakie są metody płatności?
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Akceptuje następujące metody płatności:</p>
+          <ul class="faq-list">
+            <li>Przelewy bankowe</li>
+            <li>Płatność Blik</li>
+            <li>PayPal</li>
+            <li>Google Pay</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Pytanie 3 -->
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-icon">❌</span>
+          Który plan treningowy powinienem wybrać?
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Wybór planu zależy od Twoich celów i doświadczenia:</p>
+          <ul class="faq-list">
+            <li><strong>Plan dla początkujących</strong> - jeśli dopiero zaczynasz przygodę z treningami</li>
+            <li><strong>Indywidualny Plan Treningowy</strong> - jeśli masz już doświadczenie i potrzebujesz spersonalizowanego programu</li>
+            <li><strong>Plan + prowadzenie online</strong> - jeśli chcesz pełnego wsparcia trenerskiego</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Pytanie 4 -->
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-icon">❌</span>
+          Jak przebiega tworzenie indywidualnego planu treningowego?
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Proces tworzenia planu:</p>
+          <ol class="faq-ordered-list">
+            <li>Wypełniasz ankietę z informacjami o Twoich celach, doświadczeniu i dostępnym sprzęcie</li>
+            <li>Analizuję Twoje potrzeby i możliwości</li>
+            <li>Tworzę spersonalizowany plan treningowy</li>
+            <li>Otrzymujesz gotowy plan na maila wraz z instrukcjami</li>
+          </ol>
+        </div>
+      </div>
+      
+      <!-- Pytanie 5 -->
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-icon">❌</span>
+          Gdzie mogę napisać w razie pytań?
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Możesz skontaktować się ze mną przez:</p>
+          <ul class="faq-list">
+            <li>Email: <a href="mailto:adriancalisthenics1@gmail.com" class="contact-link">adriancalisthenics1@gmail.com</a></li>
+            <li>Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" class="contact-link">@adrian_calisthenics1</a></li>
+            <li>Bezpośrednio po zakupie planu z prowadzeniem online</li>
+          </ul>
+        </div>
       </div>
     </div>
-    
-    <!-- Pytanie 3 -->
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span style="color: var(--primary-color); margin-right: 10px;">❌</span>
-        Który plan treningowy powinienem wybrać?
-        <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Wybór planu zależy od Twoich celów i doświadczenia:</p>
-        <ul style="list-style-type: disc; padding-left: 1.5rem; margin-top: 0.5rem;">
-          <li><strong>Plan dla początkujących</strong> - jeśli dopiero zaczynasz przygodę z treningami</li>
-          <li><strong>Indywidualny Plan Treningowy</strong> - jeśli masz już doświadczenie i potrzebujesz spersonalizowanego programu</li>
-          <li><strong>Plan + prowadzenie online</strong> - jeśli chcesz pełnego wsparcia trenerskiego</li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Pytanie 4 -->
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span style="color: var(--primary-color); margin-right: 10px;">❌</span>
-        Jak przebiega tworzenie indywidualnego planu treningowego?
-        <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Proces tworzenia planu:</p>
-        <ol style="padding-left: 1.5rem; margin-top: 0.5rem;">
-          <li>Wypełniasz ankietę z informacjami o Twoich celach, doświadczeniu i dostępnym sprzęcie</li>
-          <li>Analizuję Twoje potrzeby i możliwości</li>
-          <li>Tworzę spersonalizowany plan treningowy</li>
-          <li>Otrzymujesz gotowy plan na maila wraz z instrukcjami</li>
-        </ol>
-      </div>
-    </div>
-    
-    <!-- Pytanie 5 -->
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        <span style="color: var(--primary-color); margin-right: 10px;">❌</span>
-        Gdzie mogę napisać w razie pytań?
-        <i class="fas fa-chevron-down" style="margin-left: auto; transition: transform 0.3s;"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Możesz skontaktować się ze mną przez:</p>
-        <ul style="list-style-type: disc; padding-left: 1.5rem; margin-top: 0.5rem;">
-          <li>Email: <a href="mailto:adriancalisthenics1@gmail.com" style="color: var(--primary-color);">adriancalisthenics1@gmail.com</a></li>
-          <li>Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" style="color: var(--primary-color);">@adrian_calisthenics1</a></li>
-          <li>Bezpośrednio po zakupie planu z prowadzeniem online</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Sekcja "Kontakt" -->
   <section class="section" id="kontakt">
     <h2 class="section-title">Kontakt</h2>
-    <p>Email: adriancalisthenics1@gmail.com</p>
-    <p>Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" style="color:var(--primary-color)">@adrian_calisthenics1</a></p>
+    <p>Email: <a href="mailto:adriancalisthenics1@gmail.com" class="contact-link">adriancalisthenics1@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" class="contact-link">@adrian_calisthenics1</a></p>
   </section>
-
-  <script>
-  function toggleFaq(button) {
-    const faqItem = button.parentElement;
-    faqItem.classList.toggle('active');
-  }
-</script>
 
   <!-- Stopka -->
   <footer>
     &copy; 2025 Trener Adrian Dras. Wszelkie prawa zastrzeżone.
   </footer>
+
+  <script>
+    function toggleFaq(button) {
+      const faqItem = button.parentElement;
+      faqItem.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
