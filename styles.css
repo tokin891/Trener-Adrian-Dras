@@ -375,6 +375,14 @@ nav a:hover::after {
   background-image: url('Images/plan3-bg.png');
 }
 
+.plan:nth-child(4)::before {
+  background-image: url('Images/plan4-bg.jpg');
+}
+
+.plan:nth-child(5)::before {
+  background-image: url('Images/plan5-bg.png');
+}
+
 .plan-header {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
