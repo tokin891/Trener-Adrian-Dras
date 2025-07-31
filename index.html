@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trener Adrian Dras - Plany treningowe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <meta name="description" content="Profesjonalne plany treningowe od trenera Adriana Drasa. Osiągnij swoje cele fitnessowe z indywidualnym podejściem!">
-<meta name="keywords" content="trening, kalistenika, plany treningowe, Adrian Dras, fitness">
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trener Adrian Dras - Plany treningowe</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <meta name="description" content="Profesjonalne plany treningowe od trenera Adriana Drasa. Osiągnij swoje cele fitnessowe z indywidualnym podejściem!">
+  <meta name="keywords" content="trening, kalistenika, plany treningowe, Adrian Dras, fitness">
+</head>
+
+<body>
+  <!-- Floating CTA -->
+  <div class="floating-cta">
+    <button class="btn btn-medium" onclick="location.href='#plany'">
+      <i class="fas fa-dumbbell"></i> Zacznij teraz
+    </button>
+  </div>
 
   <!-- Nagłówek -->
   <header>
@@ -23,89 +36,98 @@
   </header>
 
   <!-- Nawigacja -->
-  <nav>
+  <nav id="main-nav">
     <div class="nav-container">
-      <a href="#plany">Plany</a>
-      <a href="#kim-jestem">Kim jestem</a>
-      <a href="#dlaczego-ja">Dlaczego ja</a>
-      <a href="#opinie">Opinie</a>
-      <a href="#faq">FAQ</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#plany" class="nav-link">Plany</a>
+      <a href="#kim-jestem" class="nav-link">Kim jestem</a>
+      <a href="#dlaczego-ja" class="nav-link">Dlaczego ja</a>
+      <a href="#opinie" class="nav-link">Opinie</a>
+      <a href="#kontakt" class="nav-link">Kontakt</a>
+      <a href="#faq" class="nav-link">FAQ</a>
     </div>
   </nav>
 
-  <!-- Sekcja "Kim jestem" -->
-  <section class="section" id="kim-jestem">
+  <!-- Sekcja Kim jestem -->
+  <section class="section" id="kim-jestem" data-aos="fade-up">
     <div class="intro-container">
       <h2 class="section-title">Moja historia</h2>
       <div class="intro-content">
         <div>
-          <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Adrian Dras" width="350" class="intro-image" />
+          <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Adrian Dras - trener personalny" width="350" class="intro-image" loading="lazy" />
         </div>
         <div>
-          <h3>Cześć, jestem <span class="highlight" style="font-size: 25px;">Adrian Dras</span></h3>
+          <h3>Cześć, jestem <span class="highlight">Adrian Dras</span></h3>
           <p class="intro-text">Moja misja? Sprawić, by droga do Twojego wymarzonego ciała była jasna oraz motywująca.</p>
-          
+
           <div class="my-story">
             <p>Zaczynałem dokładnie tam, gdzie być może jesteś teraz Ty. Z nadwagą i bez doświadczenia treningowego. Przez lata prób i błędów, samodzielnego szukania informacji i testowania różnych metod, odkryłem co naprawdę działa.</p>
-            
+
             <p><strong>Moje doświadczenie:</strong></p>
             <ul class="experience-list">
-              <li> 5 lat treningów siłowych</li>
-              <li> 2 lata specjalizacji w kalistenice</li>
-              <li> Przemiana z otyłej do wysportowanej sylwetki</li>
+              <li>5 lat treningów siłowych</li>
+              <li>2 lata specjalizacji w kalistenice</li>
+              <li>Przemiana z otyłej do wysportowanej sylwetki</li>
             </ul>
-            
+
             <p>Wiem jak to jest zaczynać od zera i jakie trudności napotykasz na swojej drodze. Dzięki mojemu doświadczeniu pomogę Ci uniknąć błędów, które sam popełniłem i osiągnąć efekty szybciej niż myślisz!</p>
           </div>
-          
+
           <button class="btn btn-medium" onclick="location.href='#plany'">Zobacz ofertę</button>
+          <button class="btn btn-medium btn-secondary" onclick="location.href='#kontakt'">Skontaktuj się</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sekcja "Dlaczego ja" -->
-  <section class="section" id="dlaczego-ja">
+  <!-- Sekcja Dlaczego ja -->
+  <section class="section" id="dlaczego-ja" data-aos="fade-up">
     <h2 class="section-title">Dlaczego ja?</h2>
-    <img src="Images/5cae5195-e932-4139-92ac-c51663a2abc0.jpg" alt="Dlaczego warto" class="section-image" />
+    <img src="Images/5cae5195-e932-4139-92ac-c51663a2abc0.jpg" alt="Dlaczego warto wybrać trenera Adriana Drasa" class="section-image" loading="lazy" />
     <ul class="feature-list">
-      <li>Indywidualnie podchodzę do każdego klienta</li>
-      <li>Posiadam dużą wiedzę oraz cały czas uczę się nowych rzeczy</li>
-      <li>Oferuję stałe wsparcie i motywację</li>
-      <li>Jeśli coś nie jest zrozumiałe i potrzebujesz pomocy to wystarczy że napiszesz</li>
+      <li>Indywidualne podejście do klienta</li>
+      <li>Stały rozwój i aktualna wiedza</li>
+      <li>Motywacja i wsparcie na każdym kroku</li>
+      <li>Zawsze odpowiadam i pomagam w razie pytań</li>
     </ul>
+
+    <div class="cta-box" data-aos="zoom-in">
+      <h3>Gotowy na zmianę?</h3>
+      <p>Wybierz plan dopasowany do Twoich potrzeb i zacznij już dziś!</p>
+      <button class="btn btn-medium" onclick="location.href='#plany'">Zobacz plany</button>
+    </div>
 
     <!-- Sekcja Przemiany -->
     <div class="transformation-section">
+      <!-- Moja przemiana -->
       <div class="transformation-pair">
         <div>
           <h3>Moja przemiana</h3>
           <p>Zobacz jak wyglądała moja droga od początkującego do obecnej formy:</p>
           <div class="transformation-images">
             <div>
-              <img src="Images/przed.jpg" alt="Przed przemianą" class="transformation-image"">
+              <img src="Images/przed.jpg" alt="Adrian Dras przed przemianą" class="transformation-image" loading="lazy">
               <p class="transformation-caption">Przed - początek mojej przygody</p>
             </div>
             <div>
-              <img src="Images/po.jpg" alt="Po przemianie" class="transformation-image">
+              <img src="Images/po.jpg" alt="Adrian Dras po przemianie" class="transformation-image" loading="lazy">
               <p class="transformation-caption">Po - efekty ciężkiej pracy</p>
             </div>
           </div>
         </div>
       </div>
-      
+
+      <!-- Kalistenika -->
       <div class="transformation-pair">
         <div>
           <h3>Moje osiągnięcia w kalistenice</h3>
           <p>Od podstawowych ćwiczeń do zaawansowanych elementów:</p>
           <div class="transformation-images">
             <div>
-              <img src="Images/kalistenika1.png" alt="Początki kalisteniki" class="transformation-image">
+              <img src="Images/kalistenika1.png" alt="Początki kalisteniki Adriana Drasa" class="transformation-image" loading="lazy">
               <p class="transformation-caption">Moje początki</p>
             </div>
             <div>
-              <img src="Images/kalistenika2.jpg" alt="Aktualny poziom" class="transformation-image">
+              <img src="Images/kalistenika2.jpg" alt="Aktualny poziom kalisteniki Adriana Drasa" class="transformation-image" loading="lazy">
               <p class="transformation-caption">Obecny poziom</p>
             </div>
           </div>
@@ -115,7 +137,7 @@
   </section>
 
   <!-- Sekcja Statystyki -->
-  <section class="section stats-section" id="statystyki">
+  <section class="section stats-section" id="statystyki" data-aos="fade-up">
     <h2 class="section-title">Moje osiągnięcia</h2>
     <div class="stats-container">
       <div class="stat-item">
@@ -133,122 +155,65 @@
     </div>
   </section>
 
-
-  <!-- Sekcja "Opinie" -->
-  <section class="section" id="opinie">
+  <!-- Opinie -->
+  <section class="section" id="opinie" data-aos="fade-up">
     <h2 class="section-title">Opinie klientów</h2>
     <div class="opinions-grid">
-      <img src="Images/opinia1.png" alt="Opinia klienta" class="opinion-img" />
-      <img src="Images/Opinia2.png" alt="Opinia klienta" class="opinion-img" />
-      <img src="Images/Opinia3.png" alt="Opinia klienta" class="opinion-img" />
-      <img src="Images/Opinia4.png" alt="Opinia klienta" class="opinion-img" />
+      <img src="Images/opinia1.png" alt="Opinia klienta" class="opinion-img" loading="lazy">
+      <img src="Images/Opinia2.png" alt="Opinia klienta" class="opinion-img" loading="lazy">
+      <img src="Images/Opinia3.png" alt="Opinia klienta" class="opinion-img" loading="lazy">
+      <img src="Images/Opinia4.png" alt="Opinia klienta" class="opinion-img" loading="lazy">
     </div>
   </section>
 
-
-  <script>
-    // Skrypt do obsługi karuzeli
-  document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const dotsContainer = document.querySelector('.testimonial-dots');
-    const prevBtn = document.querySelector('.testimonial-prev');
-    const nextBtn = document.querySelector('.testimonial-next');
-    let currentSlide = 0;
-
-    // Tworzenie kropek nawigacyjnych
-    slides.forEach((_, index) => {
-      const dot = document.createElement('span');
-      dot.classList.add('testimonial-dot');
-      if (index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
-    });
-
-    const dots = document.querySelectorAll('.testimonial-dot');
-
-    // Funkcja do zmiany slajdu
-    function goToSlide(slideIndex) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      dots.forEach(dot => dot.classList.remove('active'));
-      
-      currentSlide = slideIndex;
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
-    }
-
-    // Następny slajd
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      goToSlide(currentSlide);
-    }
-
-    // Poprzedni slajd
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      goToSlide(currentSlide);
-    }
-
-    // Event listeners
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-  });
-  </script>
-
-  <!-- Nowa sekcja z karuzelą opinii -->
-  <section class="section testimonial-section">
+  <!-- Karuzela opinii -->
+  <section class="section testimonial-section" data-aos="fade-up">
     <h2 class="section-title">Co mówią o mnie klienci</h2>
-    
     <div class="testimonial-carousel">
-      <!-- Opinia 1 -->
+      <!-- Slajdy -->
       <div class="testimonial-slide active">
         <div class="testimonial-content">
           <div class="testimonial-image-container">
-            <img src="Images/kuba.jpg" alt="Kuba" class="testimonial-image">
+            <img src="Images/kuba.jpg" alt="Kuba - klient" class="testimonial-image" loading="lazy">
           </div>
           <div class="testimonial-text-container">
             <p class="testimonial-text">
-              "Mega się cieszę że skorzystałem z twojej oferty Adrian. Bardzo mi to pomogło w rozbudowaniu pleców, gdzie miałem spore kompleksy, z których pomogłeś mi wyjść. Dużo się też dowiedziałem o kalistenice co i jak robić dzięki czemu znacznie poprawiłem swoje osiągi w staniu na rękach i pompkach. Widzę duży progres w sile jak i w sylwetce z czego jestem zadowolony bo plan spełnił moje oczekiwania. Podoba mi się również komunikacja z tobą jesteś często dostępny dla swoich klientów co jest naprawdę fajne i czuć że chcesz pomóc ludziom w zrealizowaniu swoich marzeń. Wielkie dzięki za pomoc i przekazanie cennej wiedzy"
+              "Mega się cieszę że skorzystałem z twojej oferty Adrian. Bardzo mi to pomogło w rozbudowaniu pleców..."
             </p>
             <div class="testimonial-author">Kuba</div>
           </div>
         </div>
       </div>
-      
-      <!-- Opinia 2 -->
+
       <div class="testimonial-slide">
         <div class="testimonial-content">
           <div class="testimonial-image-container">
-            <img src="Images/klient2.png" alt="m" class="testimonial-image">
+            <img src="Images/klient2.png" alt="Klient" class="testimonial-image" loading="lazy">
           </div>
           <div class="testimonial-text-container">
             <p class="testimonial-text">
-              "Masz tutaj dwa zdjęcia
-              Jeśli chodzi o sylwetkę to strasznie poleciała do góry
-              Jak zacząłem trenować tym planem
-              I jeszcze masa tak samo z twoich przepisów"
+              "Masz tutaj dwa zdjęcia. Sylwetka mocno się poprawiła..."
             </p>
-            <div class="testimonial-author"></div>
+            <div class="testimonial-author">Anonimowy klient</div>
           </div>
         </div>
       </div>
 
-            <!-- Opinia 2 -->
       <div class="testimonial-slide">
         <div class="testimonial-content">
           <div class="testimonial-image-container">
-            <img src="Images/klient3.png" alt="m" class="testimonial-image">
+            <img src="Images/klient3.png" alt="Mikołaj - klient" class="testimonial-image" loading="lazy">
           </div>
           <div class="testimonial-text-container">
             <p class="testimonial-text">
-              "Siema, chciałem pochwalić się jak wychodzi front lever od zera trenując z twoim planem, daleko do dobrej techniki ale jest postęp"
+              "Siema, chciałem pochwalić się jak wychodzi front lever od zera..."
             </p>
             <div class="testimonial-author">Mikołaj</div>
           </div>
         </div>
       </div>
-      
-      
-      <!-- Nawigacja -->
+
+      <!-- Nawigacja karuzeli -->
       <div class="testimonial-nav">
         <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
         <div class="testimonial-dots"></div>
@@ -258,13 +223,12 @@
   </section>
 
   <!-- Sekcja "Plany" -->
-  <section class="section" id="plany">
+  <section class="section" id="plany" data-aos="fade-up">
     <h2 class="section-title">Wybierz swój plan</h2>
-    <img src="Images/54dad85f-f276-4d48-8caa-bf0533cbe768.jpg" alt="Plany treningowe" class="section-image" />
     
     <div class="plans-container">
       <!-- Plan 1 -->
-      <div class="plan">
+      <div class="plan" data-aos="flip-left">
         <div class="plan-header">
           <h3>Indywidualny Plan Treningowy + 1 miesiąc prowadzenia online</h3>
         </div>
@@ -280,7 +244,7 @@
       </div>
       
       <!-- Plan 2 -->
-      <div class="plan">
+      <div class="plan" data-aos="flip-left" data-aos-delay="150">
         <div class="plan-header">
           <h3>Indywidualny Plan Treningowy</h3>
         </div>
@@ -295,7 +259,7 @@
       </div>
       
       <!-- Plan 3 -->
-      <div class="plan">
+      <div class="plan" data-aos="flip-left" data-aos-delay="300">
         <div class="plan-header">
           <h3>Plan dla początkujących</h3>
         </div>
@@ -311,8 +275,42 @@
     </div>
   </section>
 
+  <!-- Sekcja "Kontakt" -->
+  <section class="section" id="kontakt" data-aos="fade-up">
+    <img src="Images/54dad85f-f276-4d48-8caa-bf0533cbe768.jpg" alt="Plany treningowe Adriana Drasa" class="section-image" loading="lazy">
+    <h2 class="section-title">Kontakt</h2>
+    
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Dane kontaktowe</h3>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:adriancalisthenics1@gmail.com" class="contact-link">adriancalisthenics1@gmail.com</a></p>
+        <p><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" class="contact-link">@adrian_calisthenics1</a></p>
+      </div>
+      
+      <div class="contact-form">
+        <h3>Wyślij wiadomość</h3>
+        <form id="contactForm" onsubmit="return submitForm(event)">
+          <div class="form-group">
+            <label for="name">Imię:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Wiadomość:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-medium">Wyślij</button>
+        </form>
+        <div id="formMessage" class="form-message"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Sekcja FAQ -->
-  <section class="section" id="faq">
+  <section class="section" id="faq" data-aos="fade-up">
     <h2 class="section-title">Najczęściej zadawane pytania</h2>
     
     <div class="faq-container">
@@ -381,44 +379,158 @@
           </ol>
         </div>
       </div>
-      
-      <!-- Pytanie 5 -->
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-icon">❌</span>
-          Gdzie mogę napisać w razie pytań?
-          <i class="fas fa-chevron-down faq-arrow"></i>
-        </button>
-        <div class="faq-answer">
-          <p>Możesz skontaktować się ze mną przez:</p>
-          <ul class="faq-list">
-            <li>Email: <a href="mailto:adriancalisthenics1@gmail.com" class="contact-link">adriancalisthenics1@gmail.com</a></li>
-            <li>Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" class="contact-link">@adrian_calisthenics1</a></li>
-            <li>Bezpośrednio po zakupie planu z prowadzeniem online</li>
-          </ul>
-        </div>
-      </div>
     </div>
-  </section>
-
-  <!-- Sekcja "Kontakt" -->
-  <section class="section" id="kontakt">
-    <h2 class="section-title">Kontakt</h2>
-    <p>Email: <a href="mailto:adriancalisthenics1@gmail.com" class="contact-link">adriancalisthenics1@gmail.com</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" class="contact-link">@adrian_calisthenics1</a></p>
   </section>
 
   <!-- Stopka -->
   <footer>
     &copy; 2025 Trener Adrian Dras. Wszelkie prawa zastrzeżone.
+    <br>
+    Fotografie: <strong>Adrian Paszul</strong>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
+      emailjs.init("1DadQvoshUBA9gEBz"); // Znajdziesz w ustawieniach EmailJS
+  </script>
+  <script>
+    // Inicjalizacja AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Płynne przewijanie
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Aktywna nawigacja
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 300)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // FAQ
     function toggleFaq(button) {
       const faqItem = button.parentElement;
       faqItem.classList.toggle('active');
     }
-  </script>
 
+    // Formularz kontaktowy
+    function submitForm(event) {
+        event.preventDefault();
+        const formMessage = document.getElementById('formMessage');
+
+      emailjs.sendForm('service_i0u8qkg', 'template_fxulo4q', '#contactForm')
+          .then(() => {
+              formMessage.textContent = "Wiadomość wysłana!";
+              formMessage.classList.add('success');
+              document.getElementById('contactForm').reset();
+          }, (error) => {
+              formMessage.textContent = "Błąd: " + error.text;
+              formMessage.classList.add('error');
+          });
+
+      formMessage.style.display = "block";
+      setTimeout(() => {
+          formMessage.style.display = "none";
+          formMessage.classList.remove('success', 'error');
+      }, 5000);
+  }
+
+    // Karuzela opinii
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.testimonial-slide');
+      const dotsContainer = document.querySelector('.testimonial-dots');
+      const prevBtn = document.querySelector('.testimonial-prev');
+      const nextBtn = document.querySelector('.testimonial-next');
+      let currentSlide = 0;
+      let slideInterval;
+
+      // Tworzenie kropek nawigacyjnych
+      slides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('testimonial-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+          goToSlide(index);
+          resetInterval();
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll('.testimonial-dot');
+
+      // Funkcja do zmiany slajdu
+      function goToSlide(slideIndex) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        currentSlide = slideIndex;
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+      }
+
+      // Następny slajd
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        goToSlide(currentSlide);
+      }
+
+      // Poprzedni slajd
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        goToSlide(currentSlide);
+      }
+
+      // Automatyczne przewijanie
+      function startInterval() {
+        slideInterval = setInterval(nextSlide, 15000);
+      }
+
+      function resetInterval() {
+        clearInterval(slideInterval);
+        startInterval();
+      }
+
+      // Event listeners
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+      });
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
+      });
+
+      // Start automatycznego przewijania
+      startInterval();
+    });
+  </script>
 </body>
 </html>

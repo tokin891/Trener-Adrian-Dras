@@ -757,3 +757,156 @@ footer {
     flex: 1;
   }
 }
+
+.floating-cta {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  animation: pulse 2s infinite;
+}
+
+.floating-cta button {
+  border-radius: 50px;
+  padding: 15px 25px;
+  box-shadow: 0 5px 15px rgba(204, 0, 0, 0.4);
+}
+
+.floating-cta i {
+  margin-right: 8px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Aktywny link w nawigacji */
+.nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+.nav-link.active::after {
+  width: calc(100% - 2rem) !important;
+  left: 1rem !important;
+}
+
+/* CTA Box */
+.cta-box {
+  background: var(--primary-color);
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 3rem 0;
+  text-align: center;
+  color: white;
+}
+
+.cta-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.cta-box p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Formularz kontaktowy */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-info, .contact-form {
+  flex: 1;
+  min-width: 300px;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: var(--primary-color);
+  width: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-group textarea {
+  min-height: 150px;
+}
+
+.form-message {
+  display: none;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+.form-message.success {
+  background: rgba(0, 200, 0, 0.2);
+  border: 1px solid #0a0;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .testimonial-content {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  
+  .testimonial-image-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .floating-cta {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .floating-cta button {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .plan {
+    margin-bottom: 2rem;
+  }
+  
+  .transformation-image {
+    height: 300px !important;
+  }
+}
+
+/* Animacje dla przycisków */
+.btn-secondary {
+  background: #333 !important;
+}
+
+.btn-secondary:hover {
+  background: #444 !important;
+}
