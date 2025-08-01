@@ -236,6 +236,58 @@ nav a:hover::after {
   color: var(--text-secondary);
 }
 
+.transformation-images.side-by-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.transformation-images.side-by-side .photo-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 1rem;
+  max-width: 380px;
+  flex: 1;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.transformation-images.side-by-side .photo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(204, 0, 0, 0.4);
+}
+
+.transformation-images.side-by-side img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 15px rgba(204, 0, 0, 0.3);
+}
+
+.transformation-images.side-by-side p {
+  margin-top: 0.8rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.transformation-section {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.transformation-pair:not(:last-child) {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 3rem;
+}
+
 @media (min-width: 768px) {
   .transformation-pair {
     flex-direction: row;
@@ -917,4 +969,72 @@ footer {
 
 .btn-secondary:hover {
   background: #444 !important;
+}
+.newsletter-section {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  margin: 3rem auto;
+}
+
+.newsletter-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+}
+
+.newsletter-form {
+  margin-top: 1.5rem;
+}
+
+.newsletter-form input[type="text"],
+.newsletter-form input[type="email"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.newsletter-form input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.newsletter-form label {
+  font-size: 0.9rem;
+}
+
+.newsletter-section small {
+  display: block;
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+/* Efekt przed/po */
+.before-after {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+}
+.before-after img {
+  display: block;
+  width: 100%;
+  border-radius: 15px;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 25px rgba(204, 0, 0, 0.4);
+}
+.before-after .after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+.before-after:hover .after {
+  opacity: 1;
 }

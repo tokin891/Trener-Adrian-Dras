@@ -23,7 +23,7 @@
 <body>
   <!-- Floating CTA -->
   <div class="floating-cta">
-    <button class="btn btn-medium" onclick="location.href='#plany'">
+    <button class="btn btn-medium" data-scroll="#plany">
       <i class="fas fa-dumbbell"></i> Zacznij teraz
     </button>
   </div>
@@ -34,7 +34,7 @@
       <h1>Transformacja Twojego ciała zaczyna się tutaj</h1>
       <p>Profesjonalne plany treningowe dopasowane do Twoich potrzeb</p>
       <br>
-      <button class="btn btn-large" onclick="location.href='#plany'">Zacznij przemianę już dziś</button>
+      <button class="btn btn-large" data-scroll="#plany">Zacznij przemianę już dziś</button>
     </div>
   </header>
 
@@ -45,6 +45,7 @@
       <a href="#kim-jestem" class="nav-link">Kim jestem</a>
       <a href="#dlaczego-ja" class="nav-link">Dlaczego ja</a>
       <a href="#opinie" class="nav-link">Opinie</a>
+      <a href="#newsletter" class="nav-link">Newsletter</a>
       <a href="#kontakt" class="nav-link">Kontakt</a>
       <a href="#faq" class="nav-link">FAQ</a>
     </div>
@@ -75,8 +76,8 @@
             <p>Wiem jak to jest zaczynać od zera i jakie trudności napotykasz na swojej drodze. Dzięki mojemu doświadczeniu pomogę Ci uniknąć błędów, które sam popełniłem i osiągnąć efekty szybciej niż myślisz!</p>
           </div>
 
-          <button class="btn btn-medium" onclick="location.href='#plany'">Zobacz ofertę</button>
-          <button class="btn btn-medium btn-secondary" onclick="location.href='#kontakt'">Skontaktuj się</button>
+          <button class="btn btn-medium" data-scroll="#plany">Zobacz ofertę</button>
+          <button class="btn btn-medium btn-secondary" data-scroll="#kontakt">Skontaktuj się</button>
         </div>
       </div>
     </div>
@@ -96,7 +97,7 @@
     <div class="cta-box" data-aos="zoom-in">
       <h3>Gotowy na zmianę?</h3>
       <p>Wybierz plan dopasowany do Twoich potrzeb i zacznij już dziś!</p>
-      <button class="btn btn-medium" onclick="location.href='#plany'">Zobacz plany</button>
+      <button class="btn btn-medium" data-scroll="#plany">Zobacz plany</button>
     </div>
 
     <!-- Sekcja Przemiany -->
@@ -106,17 +107,16 @@
         <div>
           <h3>Moja przemiana</h3>
           <p>Zobacz jak wyglądała moja droga od początkującego do obecnej formy:</p>
-          <div class="transformation-images">
-            <div>
-              <img src="Images/przed.jpg" alt="Adrian Dras przed przemianą" class="transformation-image" loading="lazy">
-              <p class="transformation-caption">Przed - początek mojej przygody</p>
+          <div class="transformation-images side-by-side">
+            <div class="photo-card">
+              <img src="Images/przed.jpg" alt="Przed przemianą" loading="lazy">
+              <p>Przed</p>
             </div>
-            <div>
-              <img src="Images/po.jpg" alt="Adrian Dras po przemianie" class="transformation-image" loading="lazy">
-              <p class="transformation-caption">Po - efekty ciężkiej pracy</p>
+            <div class="photo-card">
+              <img src="Images/po.jpg" alt="Po przemianie" loading="lazy">
+              <p>Po</p>
             </div>
           </div>
-        </div>
       </div>
 
       <!-- Kalistenika -->
@@ -124,15 +124,15 @@
         <div>
           <h3>Moje osiągnięcia w kalistenice</h3>
           <p>Od podstawowych ćwiczeń do zaawansowanych elementów:</p>
-          <div class="transformation-images">
-            <div>
-              <img src="Images/kalistenika1.png" alt="Początki kalisteniki Adriana Drasa" class="transformation-image" loading="lazy">
-              <p class="transformation-caption">Moje początki</p>
-            </div>
-            <div>
-              <img src="Images/kalistenika2.jpg" alt="Aktualny poziom kalisteniki Adriana Drasa" class="transformation-image" loading="lazy">
-              <p class="transformation-caption">Obecny poziom</p>
-            </div>
+            <div class="transformation-images side-by-side">
+              <div class="photo-card">
+                <img src="Images/kalistenika1.png" alt="Przed przemianą" loading="lazy">
+                <p>Przed</p>
+              </div>
+              <div class="photo-card">
+                <img src="Images/kalistenika2.jpg" alt="Po przemianie" loading="lazy">
+                <p>Po</p>
+              </div>
           </div>
         </div>
       </div>
@@ -311,6 +311,30 @@
     </div>
   </section>
 
+  <!-- Sekcja Newsletter -->
+  <section class="section newsletter-section" id="newsletter" data-aos="fade-up">
+    <div class="newsletter-container">
+      <h2 class="section-title">Zapisz się do newslettera</h2>
+      <p>Otrzymuj darmowe porady treningowe i ekskluzywne materiały!</p>
+      
+      <form id="newsletterForm" class="newsletter-form">
+        <div class="form-group">
+          <input type="text" id="newsletterName" name="name" placeholder="Twoje imię" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="newsletterEmail" name="email" placeholder="Twój email" required>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="consent" required>
+          <label for="consent">Akceptuję <a href="polityka_prywatnosci.html" target="_blank">politykę prywatności</a></label>
+        </div>
+        <button type="submit" class="btn btn-medium">Zapisz się</button>
+      </form>
+      
+      <div id="newsletterMessage" class="form-message"></div>
+    </div>
+  </section>
+
   <!-- Sekcja "Kontakt" -->
   <section class="section" id="kontakt" data-aos="fade-up">
     <img src="Images/54dad85f-f276-4d48-8caa-bf0533cbe768.jpg" alt="Plany treningowe Adriana Drasa" class="section-image" loading="lazy">
@@ -319,6 +343,8 @@
     <div class="contact-container">
       <div class="contact-info">
         <h3>Dane kontaktowe</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Miasto: Wrocław/Wałbrzych</p>
+        <p><i class="fas fa-globe"></i> Kraj: Polska</p>
         <p><i class="fas fa-envelope"></i> Email: <a href="mailto:adriancalisthenics1@gmail.com" class="contact-link">adriancalisthenics1@gmail.com</a></p>
         <p><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" class="contact-link">@adrian_calisthenics1</a></p>
       </div>
@@ -419,154 +445,15 @@
   </section>
 
   <!-- Stopka -->
-  <footer>
+ <footer>
     &copy; 2025 Trener Adrian Dras. Wszelkie prawa zastrzeżone.
     <br>
-    Fotografie: <strong>Adrian Paszul</strong>
+    Fotografie: <strong>Adrian Paszul</strong> <br>
+    <a href="polityka_prywatnosci.html" class="contact-link">Polityka prywatności</a>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-      emailjs.init("1DadQvoshUBA9gEBz"); // Znajdziesz w ustawieniach EmailJS
-  </script>
-  <script>
-    // Inicjalizacja AOS
-    AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true
-    });
-
-    // Płynne przewijanie
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Aktywna nawigacja
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 300)) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    });
-
-    // FAQ
-    function toggleFaq(button) {
-      const faqItem = button.parentElement;
-      faqItem.classList.toggle('active');
-    }
-
-    // Formularz kontaktowy
-    function submitForm(event) {
-        event.preventDefault();
-        const formMessage = document.getElementById('formMessage');
-
-      emailjs.sendForm('service_i0u8qkg', 'template_fxulo4q', '#contactForm')
-          .then(() => {
-              formMessage.textContent = "Wiadomość wysłana!";
-              formMessage.classList.add('success');
-              document.getElementById('contactForm').reset();
-          }, (error) => {
-              formMessage.textContent = "Błąd: " + error.text;
-              formMessage.classList.add('error');
-          });
-
-      formMessage.style.display = "block";
-      setTimeout(() => {
-          formMessage.style.display = "none";
-          formMessage.classList.remove('success', 'error');
-      }, 5000);
-  }
-
-    // Karuzela opinii
-    document.addEventListener('DOMContentLoaded', function() {
-      const slides = document.querySelectorAll('.testimonial-slide');
-      const dotsContainer = document.querySelector('.testimonial-dots');
-      const prevBtn = document.querySelector('.testimonial-prev');
-      const nextBtn = document.querySelector('.testimonial-next');
-      let currentSlide = 0;
-      let slideInterval;
-
-      // Tworzenie kropek nawigacyjnych
-      slides.forEach((_, index) => {
-        const dot = document.createElement('span');
-        dot.classList.add('testimonial-dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-          goToSlide(index);
-          resetInterval();
-        });
-        dotsContainer.appendChild(dot);
-      });
-
-      const dots = document.querySelectorAll('.testimonial-dot');
-
-      // Funkcja do zmiany slajdu
-      function goToSlide(slideIndex) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        currentSlide = slideIndex;
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
-      }
-
-      // Następny slajd
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        goToSlide(currentSlide);
-      }
-
-      // Poprzedni slajd
-      function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        goToSlide(currentSlide);
-      }
-
-      // Automatyczne przewijanie
-      function startInterval() {
-        slideInterval = setInterval(nextSlide, 15000);
-      }
-
-      function resetInterval() {
-        clearInterval(slideInterval);
-        startInterval();
-      }
-
-      // Event listeners
-      nextBtn.addEventListener('click', () => {
-        nextSlide();
-        resetInterval();
-      });
-      prevBtn.addEventListener('click', () => {
-        prevSlide();
-        resetInterval();
-      });
-
-      // Start automatycznego przewijania
-      startInterval();
-    });
-  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
