@@ -137,3 +137,68 @@ document.addEventListener('DOMContentLoaded', () => {
     startInterval();
   }
 });
+
+// Dodaj na początku pliku, po DOMContentLoaded
+const downloadPopup = document.getElementById('downloadPopup');
+const downloadForm = document.getElementById('downloadForm');
+const downloadMessage = document.getElementById('downloadMessage');
+const downloadBtns = document.querySelectorAll('.download-btn');
+
+// Otwórz popup po kliknięciu przycisku "Pobierz plan"
+downloadBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    downloadPopup.classList.add('active');
+  });
+});
+
+// Zamknij popup
+document.querySelector('.download-popup .close-popup').addEventListener('click', () => {
+  downloadPopup.classList.remove('active');
+});
+
+// Zamknij po kliknięciu na tło
+downloadPopup.addEventListener('click', (e) => {
+  if (e.target === downloadPopup) {
+    downloadPopup.classList.remove('active');
+  }
+});
+
+// Obsługa formularza pobierania
+downloadForm.addEventListener('submit', e => {
+  e.preventDefault();
+  
+  const name = document.getElementById('downloadName').value;
+  const email = document.getElementById('downloadEmail').value;
+  
+  // Wyślij dane do EmailJS
+  emailjs.sendForm('service_i0u8qkg', 'template_nbdham8', e.target)
+    .then(() => {
+      showDownloadMessage("Dziękujemy! Rozpoczynam pobieranie planu...", "success");
+      
+      // Utwórz link do pobrania
+      const link = document.createElement('a');
+      link.href = 'file/Plan Treningowy pod HANDTSAND.pdf';
+      link.download = 'Plan Treningowy - Stanie na rękach - Adrian Dras.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Wyczyść formularz i zamknij popup
+      downloadForm.reset();
+      setTimeout(() => {
+        downloadPopup.classList.remove('active');
+      }, 2000);
+    })
+    .catch(error => {
+      showDownloadMessage("Wystąpił błąd: " + error.text, "error");
+    });
+});
+
+function showDownloadMessage(message, type) {
+  downloadMessage.textContent = message;
+  downloadMessage.className = `form-message ${type}`;
+  downloadMessage.style.display = 'block';
+  setTimeout(() => {
+    downloadMessage.style.display = 'none';
+  }, 5000);
+}

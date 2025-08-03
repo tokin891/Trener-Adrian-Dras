@@ -250,7 +250,7 @@
     
     <div class="plans-container">
       <!-- Plan 1 -->
-      <div class="plan" data-aos="flip-left">
+      <div class="plan">
         <div class="plan-header">
           <h3>Indywidualny Plan Treningowy + 1 miesiąc prowadzenia online</h3>
         </div>
@@ -267,7 +267,7 @@
       </div>
       
       <!-- Plan 2 -->
-      <div class="plan" data-aos="flip-left" data-aos-delay="150">
+       <div class="plan">
         <div class="plan-header">
           <h3>Indywidualny Plan Treningowy</h3>
         </div>
@@ -282,7 +282,7 @@
       </div>
       
       <!-- Plan 3 -->
-      <div class="plan" data-aos="flip-left" data-aos-delay="300">
+      <div class="plan">
         <div class="plan-header">
           <h3>Plan dla początkujących bez sprzętu</h3>
         </div>
@@ -297,8 +297,8 @@
         <button class="btn btn-block" onclick="window.location.href='https://buy.stripe.com/aFa28sdnI77v0U3cH28Ra03'">Kup teraz</button>
       </div>
 
-       <!-- Plan 4 -->
-      <div class="plan" data-aos="flip-left" data-aos-delay="300">
+      <!-- Plan 4 -->
+      <div class="plan">
         <div class="plan-header">
           <h3>Plan dla początkujących na siłowni</h3>
         </div>
@@ -314,21 +314,61 @@
       </div>
 
       <!-- Plan 5 -->
-      <div class="plan" data-aos="flip-left" data-aos-delay="300">
+      <div class="plan">
         <div class="plan-header">
           <h3>Pakiet przepisów i porad żywieniowych</h3>
         </div>
         <ul class="plan-features">
           <li>Proste i szybkie przepisy</li>
-          <li>Poradnik żywieniowy krok po kroku </li>
+          <li>Poradnik żywieniowy krok po kroku</li>
           <li>Listy zakupów i gotowe jadłospisy</li>
-          <li>Praktyczne wskazówki </li>
+          <li>Praktyczne wskazówki</li>
         </ul>
         <span class="price">50 zł</span>
         <button class="btn btn-block" onclick="window.location.href='https://buy.stripe.com/00w3cwgzU1NbbyHcH28Ra05'">Kup teraz</button>
       </div>
+
+      <!-- Darmowy plan -->
+      <div class="plan free-plan">
+        <div class="plan-header">
+          <h3>Darmowy plan: Nauka stania na rękach</h3>
+        </div>
+        <ul class="plan-features">
+          <li>Progresja od podstaw</li>
+          <li>Ćwiczenia przygotowawcze</li>
+          <li>Technika bezpiecznego stania</li>
+          <li>Jak upadać bez kontuzji</li>
+          <li>Ćwiczenia wzmacniające</li>
+        </ul>
+        <span class="price">0 zł</span>
+        <button class="btn btn-block download-btn" data-plan="handstand">Pobierz plan</button>
+      </div>
     </div>
   </section>
+
+  <div id="downloadPopup" class="download-popup">
+    <div class="download-popup-content">
+      <button class="close-popup">&times;</button>
+      <h3>Pobierz darmowy plan treningowy</h3>
+      <p>Zapisz sie do newsletter i odbierz darmowy plan treningowy</p>
+      <form id="downloadForm" class="download-form">
+        <div class="form-group">
+          <input type="text" id="downloadName" name="name" placeholder="Twoje imię" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="downloadEmail" name="email" placeholder="Twój email" required>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="downloadConsent" required>
+          <label for="downloadConsent">Akceptuję <a href="polityka_prywatnosci.html" target="_blank">politykę prywatności</a></label>
+        </div>
+        <button type="submit" class="btn btn-medium">
+          <i class="fas fa-download"></i> Zapisz się i pobierz plan
+        </button>
+      </form>
+      <div id="downloadMessage" class="form-message"></div>
+    </div>
+  </div>
 
   <!-- Sekcja Newsletter -->
   <section class="section newsletter-section" id="newsletter" data-aos="fade-up">
