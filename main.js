@@ -1,3 +1,30 @@
+// Instagram Popup /
+document.addEventListener('DOMContentLoaded', () => {
+  const igPopup = document.getElementById('igPopup');
+  const closePopup = document.querySelector('.close-popup');
+  
+  // Sprawdź czy użytkownik już nie zamknął popupa w TEJ SESJI
+  if(!sessionStorage.getItem('igPopupClosed')) {
+    setTimeout(() => {
+      igPopup.classList.add('active');
+    }, 10000); // 10 sekund
+  }
+
+  // Zamknij popup
+  closePopup.addEventListener('click', () => {
+    igPopup.classList.remove('active');
+    sessionStorage.setItem('igPopupClosed', 'true');
+  });
+
+  // Zamknij po kliknięciu na tło
+  igPopup.addEventListener('click', (e) => {
+    if (e.target === igPopup) {
+      igPopup.classList.remove('active');
+      sessionStorage.setItem('igPopupClosed', 'true');
+    }
+  });
+});
+
 // Inicjalizacja AOS
 document.addEventListener('DOMContentLoaded', () => {
   AOS.init({
