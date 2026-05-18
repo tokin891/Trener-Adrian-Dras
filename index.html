@@ -3,23 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trener Adrian Dras - Plany treningowe</title>
+  <title>Trener Kalisteniki Wrocław – Adrian Dras | Plany Treningowe Online</title>
 
+  <!-- SEO Meta -->
+  <meta name="description" content="Adrian Dras – certyfikowany trener kalisteniki z Wrocławia. Indywidualne plany treningowe online, prowadzenie online i darmowe materiały. Zacznij przemianę już dziś!">
+  <meta name="keywords" content="trener personalny Wałbrzych, trener kalisteniki Wrocław, plan treningowy online, kalistenika dla początkujących, nauka stania na rękach, front lever, trening bez sprzętu, Adrian Dras, trening personalny Dolny Śląsk">
+  <meta name="author" content="Adrian Dras">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://adriancalisthenicsweb.pl/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trener Kalisteniki Wrocław – Adrian Dras">
+  <meta property="og:description" content="Indywidualne plany treningowe i prowadzenie online z zakresu kalisteniki. Ponad 50 zadowolonych klientów!">
+  <meta property="og:url" content="https://adriancalisthenicsweb.pl/">
+  <meta property="og:image" content="https://adriancalisthenicsweb.pl/Images/og-image.jpg">
+  <meta property="og:locale" content="pl_PL">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trener Kalisteniki Wrocław – Adrian Dras">
+  <meta name="twitter:description" content="Indywidualne plany treningowe i prowadzenie online z zakresu kalisteniki.">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Adrian Dras",
+    "jobTitle": "Trener Personalny Kalisteniki",
+    "description": "Profesjonalny trener kalisteniki oferujący indywidualne plany treningowe i prowadzenie online.",
+    "url": "https://adriancalisthenicsweb.pl",
+    "email": "adriancalisthenics1@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Wrocław",
+      "addressCountry": "PL"
+    },
+    "sameAs": [
+      "https://www.instagram.com/adrian_calisthenics1"
+    ],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Indywidualny Plan Treningowy + Prowadzenie Online",
+        "price": "250",
+        "priceCurrency": "PLN"
+      },
+      {
+        "@type": "Offer",
+        "name": "Indywidualny Plan Treningowy",
+        "price": "150",
+        "priceCurrency": "PLN"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
   <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 
-  <meta name="description" content="Profesjonalne plany treningowe od trenera Adriana Drasa. Osiągnij swoje cele fitnessowe z indywidualnym podejściem!">
-  <meta name="keywords" content="trening, kalistenika, plany treningowe, Adrian Dras, fitness">
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSY83F67GM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -29,517 +84,754 @@
 </head>
 
 <body>
-  <!-- Floating CTA -->
-  <div class="floating-cta">
-    <button class="btn btn-medium" data-scroll="#plany">
-      <i class="fas fa-dumbbell"></i> Zacznij teraz
-    </button>
+
+  <!-- Cookie Consent -->
+  <div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>🍪 Ta strona używa plików cookies do analizy ruchu i poprawy działania. <a href="polityka_prywatnosci.html">Dowiedz się więcej</a></p>
+      <div class="cookie-buttons">
+        <button id="cookieAccept" class="btn btn-small">Akceptuję</button>
+        <button id="cookieDecline" class="btn btn-small btn-outline">Odrzuć</button>
+      </div>
+    </div>
   </div>
 
+  <!-- Instagram Popup -->
   <div id="igPopup" class="ig-popup">
     <div class="ig-popup-content">
       <button class="close-popup">&times;</button>
-      <h3>Dołącz do mojej społeczności na Instagramie!</h3>
-      <p>Otrzymuj codzienne porady treningowe i śledź moją drogę fitness.</p>
-      <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" class="btn btn-medium ig-popup-btn">
-        <i class="fab fa-instagram"></i> Obserwuj
+      <div class="ig-popup-icon"><i class="fab fa-instagram"></i></div>
+      <h3>Dołącz do społeczności!</h3>
+      <p>Codzienne porady treningowe i motywacja na Instagramie.</p>
+      <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" rel="noopener" class="btn btn-medium ig-popup-btn">
+        <i class="fab fa-instagram"></i> Obserwuj @adrian_calisthenics1
       </a>
     </div>
   </div>
 
-  <!-- Nagłówek -->
-  <header>
-    <div class="header-content">
-      <h1>Transformacja Twojego ciała zaczyna się tutaj</h1>
-      <p>Profesjonalne plany treningowe dopasowane do Twoich potrzeb</p>
-      <br>
-      <button class="btn btn-large" data-scroll="#plany">Zacznij przemianę już dziś</button>
-    </div>
-  </header>
-
-  <!-- Nawigacja -->
+  <!-- Navigation -->
   <nav id="main-nav">
     <div class="nav-container">
-      <a href="#plany" class="nav-link">Plany</a>
-      <a href="#kim-jestem" class="nav-link">Kim jestem</a>
-      <a href="#dlaczego-ja" class="nav-link">Dlaczego ja</a>
-      <a href="#opinie" class="nav-link">Opinie</a>
-      <a href="#newsletter" class="nav-link">Newsletter</a>
-      <a href="#kontakt" class="nav-link">Kontakt</a>
-      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#" class="nav-logo">ADRIAN<span>CALISTHENICS</span></a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#plany" class="nav-link">Plany</a>
+        <a href="#kim-jestem" class="nav-link">O mnie</a>
+        <a href="#opinie" class="nav-link">Opinie</a>
+        <a href="trening-personalny-walbrzych.html" class="nav-link nav-local">📍 Wałbrzych</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#kontakt" class="nav-link nav-cta">Kontakt</a>
+      </div>
     </div>
   </nav>
 
-  <!-- Sekcja Kim jestem -->
-  <section class="section" id="kim-jestem" data-aos="fade-up">
-    <div class="intro-container">
-      <h2 class="section-title">Moja historia</h2>
-      <div class="intro-content">
-        <div>
-          <img src="Images/09a63363-a78a-47b1-b546-80431b23ef68.jpg" alt="Adrian Dras - trener personalny" width="350" class="intro-image" loading="lazy" />
-        </div>
-        <div>
-          <h3>Cześć, jestem <span class="highlight">Adrian Dras</span></h3>
-          <p class="intro-text">Moja misja? Sprawić, by droga do Twojego wymarzonego ciała była jasna oraz motywująca.</p>
-
-          <div class="my-story">
-            <p>Zaczynałem dokładnie tam, gdzie być może jesteś teraz Ty. Z nadwagą i bez doświadczenia treningowego. Przez lata prób i błędów, samodzielnego szukania informacji i testowania różnych metod, odkryłem co naprawdę działa.</p>
-
-            <p><strong>Moje doświadczenie:</strong></p>
-            <ul class="experience-list">
-              <li>5 lat treningów siłowych</li>
-              <li>2 lata specjalizacji w kalistenice</li>
-              <li>Przemiana z otyłej do wysportowanej sylwetki</li>
-            </ul>
-
-            <p>Wiem jak to jest zaczynać od zera i jakie trudności napotykasz na swojej drodze. Dzięki mojemu doświadczeniu pomogę Ci uniknąć błędów, które sam popełniłem i osiągnąć efekty szybciej niż myślisz!</p>
-          </div>
-
-          <button class="btn btn-medium" data-scroll="#plany">Zobacz ofertę</button>
-          <button class="btn btn-medium btn-secondary" data-scroll="#kontakt">Skontaktuj się</button>
-        </div>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <img src="Images/handstand_track.jpg" alt="Adrian Dras – stanie na rękach na bieżni" class="hero-photo" loading="eager">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">🏆 Trener Kalisteniki | Wałbrzych </div>
+      <h1 class="hero-title">Transformacja<br><span class="hero-accent">Zaczyna Się</span><br>Tutaj</h1>
+      <p class="hero-sub">Indywidualne plany treningowe dopasowane do Twoich możliwości i celów.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary btn-large" data-scroll="#plany">Zobacz plany</button>
+        <button class="btn btn-ghost btn-large" data-scroll="#kim-jestem">Kim jestem?</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="hero-stat-num">50+</span><span class="hero-stat-label">Klientów</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><span class="hero-stat-num">5 lat</span><span class="hero-stat-label">Doświadczenia</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><span class="hero-stat-num">2000+</span><span class="hero-stat-label">Społeczność</span></div>
       </div>
     </div>
-  </section>
-
-  <!-- Sekcja Dlaczego ja -->
-  <section class="section" id="dlaczego-ja" data-aos="fade-up">
-    <h2 class="section-title">Dlaczego ja?</h2>
-    <img src="Images/5cae5195-e932-4139-92ac-c51663a2abc0.jpg" alt="Dlaczego warto wybrać trenera Adriana Drasa" class="section-image" loading="lazy" />
-    <ul class="feature-list">
-      <li>Indywidualne podejście do klienta</li>
-      <li>Stały rozwój i aktualna wiedza</li>
-      <li>Motywacja i wsparcie na każdym kroku</li>
-      <li>Zawsze odpowiadam i pomagam w razie pytań</li>
-    </ul>
-
-    <div class="cta-box" data-aos="zoom-in">
-      <h3>Gotowy na zmianę?</h3>
-      <p>Wybierz plan dopasowany do Twoich potrzeb i zacznij już dziś!</p>
-      <button class="btn btn-medium" data-scroll="#plany">Zobacz plany</button>
+    <div class="hero-scroll">
+      <div class="scroll-indicator"></div>
     </div>
+  </header>
 
-    <!-- Sekcja Przemiany -->
-    <div class="transformation-section">
-      <!-- Moja przemiana -->
-      <div class="transformation-pair">
-        <div>
-          <h3>Moja przemiana</h3>
-          <p>Zobacz jak wyglądała moja droga od początkującego do obecnej formy:</p>
-          <div class="transformation-images side-by-side">
-            <div class="photo-card">
-              <img src="Images/przed.jpg" alt="Przed przemianą" loading="lazy">
-              <p>Przed</p>
-            </div>
-            <div class="photo-card">
-              <img src="Images/po.jpg" alt="Po przemianie" loading="lazy">
-              <p>Po</p>
-            </div>
-          </div>
-      </div>
-
-      <!-- Kalistenika -->
-      <div class="transformation-pair">
-        <div>
-          <h3>Moje osiągnięcia w kalistenice</h3>
-          <p>Od podstawowych ćwiczeń do zaawansowanych elementów:</p>
-            <div class="transformation-images side-by-side">
-              <div class="photo-card">
-                <img src="Images/kalistenika1.png" alt="Przed przemianą" loading="lazy">
-                <p>Przed</p>
-              </div>
-              <div class="photo-card">
-                <img src="Images/kalistenika2.jpg" alt="Po przemianie" loading="lazy">
-                <p>Po</p>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sekcja Statystyki -->
-  <section class="section stats-section" id="statystyki" data-aos="fade-up">
-    <h2 class="section-title">Moje osiągnięcia</h2>
-    <div class="stats-container">
-      <div class="stat-item">
-        <div class="stat-number">50+</div>
-        <div class="stat-label">Zadowolonych klientów</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">5</div>
-        <div class="stat-label">Lat doświadczenia</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">2,000+</div>
-        <div class="stat-label">Społeczność</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Opinie -->
-  <section class="section" id="opinie" data-aos="fade-up">
-    <h2 class="section-title">Opinie klientów</h2>
-    <div class="opinions-grid">
-      <img src="Images/opinia1.png" alt="Opinia klienta" class="opinion-img" loading="lazy">
-      <img src="Images/Opinia2.png" alt="Opinia klienta" class="opinion-img" loading="lazy">
-      <img src="Images/Opinia3.png" alt="Opinia klienta" class="opinion-img" loading="lazy">
-      <img src="Images/Opinia4.png" alt="Opinia klienta" class="opinion-img" loading="lazy">
-    </div>
-  </section>
-
-  <!-- Karuzela opinii -->
-  <section class="section testimonial-section" data-aos="fade-up">
-    <h2 class="section-title">Co mówią o mnie klienci</h2>
-    <div class="testimonial-carousel">
-      <!-- Slajdy -->
-      <div class="testimonial-slide active">
-        <div class="testimonial-content">
-          <div class="testimonial-image-container">
-            <img src="Images/kuba.jpg" alt="Kuba - klient" class="testimonial-image" loading="lazy">
-          </div>
-          <div class="testimonial-text-container">
-            <p class="testimonial-text">
-              "Mega się cieszę że skorzystałem z twojej oferty Adrian. Bardzo mi to pomogło w rozbudowaniu pleców, gdzie miałem spore kompleksy, z których pomogłeś mi wyjść. Dużo się też dowiedziałem o kalistenice co i jak robić dzięki czemu znacznie poprawiłem swoje osiągi w staniu na rękach i pompkach. Widzę duży progres w sile jak i w sylwetce z czego jestem zadowolony bo plan spełnił moje oczekiwania. Podoba mi się również komunikacja z tobą jesteś często dostępny dla swoich klientów co jest naprawdę fajne i czuć że chcesz pomóc ludziom w zrealizowaniu swoich marzeń. Wielkie dzięki za pomoc i przekazanie cennej wiedzy"
-            </p>
-            <div class="testimonial-author">Kuba</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-slide">
-        <div class="testimonial-content">
-          <div class="testimonial-image-container">
-            <img src="Images/klient2.png" alt="Klient" class="testimonial-image" loading="lazy">
-          </div>
-          <div class="testimonial-text-container">
-            <p class="testimonial-text">
-              "Masz tutaj dwa zdjęcia. Sylwetka mocno się poprawiła..."
-            </p>
-            <div class="testimonial-author">Anonimowy klient</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-slide">
-        <div class="testimonial-content">
-          <div class="testimonial-image-container">
-            <img src="Images/klient3.png" alt="Mikołaj - klient" class="testimonial-image" loading="lazy">
-          </div>
-          <div class="testimonial-text-container">
-            <p class="testimonial-text">
-              "Siema, chciałem pochwalić się jak wychodzi front lever od zera..."
-            </p>
-            <div class="testimonial-author">Mikołaj</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-slide">
-        <div class="testimonial-content">
-          <div class="testimonial-image-container">
-            <img src="Images/klient4.jpg" alt="klient" class="testimonial-image" loading="lazy">
-          </div>
-          <div class="testimonial-text-container">
-            <p class="testimonial-text">
-              "Bardzo profesjonalne prowadzenie, plan skonstruowany bardzo przejrzyście, wszytsko było proste i zrozumiałe. No i oczywiście progresik super. Poprawiłem wiele sikilli i nauczylem się nowych.
-Pozdro 💪💪💪"
-            </p>
-            <div class="testimonial-author">Franek</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-slide">
-        <div class="testimonial-content">
-          <div class="testimonial-image-container">
-            <img src="Images/klient5.jpg" alt="klient" class="testimonial-image" loading="lazy">
-          </div>
-          <div class="testimonial-text-container">
-            <p class="testimonial-text">
-              "Adrian pomógł mi w pierwszych krokach dotyczących kalisteniki i nie tylko. Miałem od niego wsparcie przez cały czas co znacząco ułatwiło trenowanie. 
-Bardzo polecam!!!"
-            </p>
-            <div class="testimonial-author">Aleksander</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Nawigacja karuzeli -->
-      <div class="testimonial-nav">
-        <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
-        <div class="testimonial-dots"></div>
-        <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sekcja "Plany" -->
-  <section class="section" id="plany" data-aos="fade-up">
-    <h2 class="section-title">Wybierz swój plan</h2>
-    
-    <div class="plans-container">
-      <!-- Plan 1 -->
-      <div class="plan">
-        <div class="plan-header">
-          <h3>Indywidualny Plan Treningowy + 1 miesiąc prowadzenia online</h3>
-        </div>
-        <ul class="plan-features">
-          <li>Pełen spersonalizowany plan</li>
-          <li>Plan dostosowany do twoich celów</li>
-          <li>Miesięczne wsparcie online</li>
-          <li>Filmiki instruktażowe</li>
-          <li>Ćwiczenia rehabilitacyjne</li>
-          <li>Konsultacja online</li>
-        </ul>
-        <span class="price">250 zł</span>
-        <button class="btn btn-block" onclick="location.href='https://buy.stripe.com/9B600kabw4Zn5aj0Yk8Ra02'">Kup teraz</button>
-      </div>
-      
-      <!-- Plan 2 -->
-       <div class="plan">
-        <div class="plan-header">
-          <h3>Indywidualny Plan Treningowy</h3>
-        </div>
-        <ul class="plan-features">
-          <li>Pełen spersonalizowany plan</li>
-          <li>Plan dostosowany do twoich celów</li>
-          <li>Filmiki instruktażowe</li>
-          <li>Możliwa modyfikacja planu</li>
-        </ul>
-        <span class="price">150 zł</span>
-        <button class="btn btn-block" onclick="window.location.href='https://buy.stripe.com/4gMeVefvQ4ZnbyH9uQ8Ra01'">Kup teraz</button>
-      </div>
-      
-      <!-- Plan 3 -->
-      <div class="plan">
-        <div class="plan-header">
-          <h3>Plan dla początkujących bez sprzętu</h3>
-        </div>
-        <ul class="plan-features">
-          <li>Technika od podstaw</li>
-          <li>Zero sprzętu</li>
-          <li>Podstawy prawidłowej techniki</li>
-          <li>Budowanie ogólnej sprawności</li>
-          <li>Stopniowe progresje</li>
-        </ul>
-        <span class="price">50 zł</span>
-        <button class="btn btn-block" onclick="window.location.href='https://buy.stripe.com/aFa28sdnI77v0U3cH28Ra03'">Kup teraz</button>
-      </div>
-
-      <!-- Plan 4 -->
-      <div class="plan">
-        <div class="plan-header">
-          <h3>Plan dla początkujących na siłowni</h3>
-        </div>
-        <ul class="plan-features">
-          <li>Trening całego ciała</li>
-          <li>Łączenie ćwiczeń na maszynach i z wolnymi ciężarami</li>
-          <li>Podstawy prawidłowej techniki</li>
-          <li>Stopniowe zwiększanie obciążenia</li>
-          <li>Wzmocnienie fundamentów</li>
-        </ul>
-        <span class="price">50 zł</span>
-        <button class="btn btn-block" onclick="window.location.href='https://buy.stripe.com/fZueVe0AW4ZndGP6iE8Ra04'">Kup teraz</button>
-      </div>
-
-      <!-- Plan 5 -->
-      <div class="plan">
-        <div class="plan-header">
-          <h3>Pakiet przepisów i porad żywieniowych</h3>
-        </div>
-        <ul class="plan-features">
-          <li>Proste i szybkie przepisy</li>
-          <li>Poradnik żywieniowy krok po kroku</li>
-          <li>Listy zakupów i gotowe jadłospisy</li>
-          <li>Praktyczne wskazówki</li>
-        </ul>
-        <span class="price">50 zł</span>
-        <button class="btn btn-block" onclick="window.location.href='https://buy.stripe.com/00w3cwgzU1NbbyHcH28Ra05'">Kup teraz</button>
-      </div>
-
-      <!-- Darmowy plan -->
-      <div class="plan free-plan">
-        <div class="plan-header">
-          <h3>Darmowy plan: Nauka stania na rękach</h3>
-        </div>
-        <ul class="plan-features">
-          <li>Progresja od podstaw</li>
-          <li>Ćwiczenia przygotowawcze</li>
-          <li>Technika bezpiecznego stania</li>
-          <li>Jak upadać bez kontuzji</li>
-          <li>Ćwiczenia wzmacniające</li>
-        </ul>
-        <span class="price">0 zł</span>
-        <button class="btn btn-block download-btn" data-plan="handstand">Pobierz plan</button>
-      </div>
-    </div>
-  </section>
-
-  <div id="downloadPopup" class="download-popup">
-    <div class="download-popup-content">
-      <button class="close-popup">&times;</button>
-      <h3>Pobierz darmowy plan treningowy</h3>
-      <p>Zapisz sie do newsletter i odbierz darmowy plan treningowy</p>
-      <form id="downloadForm" class="download-form">
-        <div class="form-group">
-          <input type="text" id="downloadName" name="name" placeholder="Twoje imię" required>
-        </div>
-        <div class="form-group">
-          <input type="email" id="downloadEmail" name="email" placeholder="Twój email" required>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" id="downloadConsent" required>
-          <label for="downloadConsent">Akceptuję <a href="polityka_prywatnosci.html" target="_blank">politykę prywatności</a></label>
-        </div>
-        <button type="submit" class="btn btn-medium">
-          <i class="fas fa-download"></i> Zapisz się i pobierz plan
-        </button>
-      </form>
-      <div id="downloadMessage" class="form-message"></div>
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <span><i class="fas fa-check-circle"></i> Indywidualne podejście</span>
+      <span><i class="fas fa-check-circle"></i> Wsparcie 7 dni w tygodniu</span>
+      <span><i class="fas fa-check-circle"></i> Płatność przez Stripe</span>
+      <span><i class="fas fa-check-circle"></i> Satysfakcja gwarantowana</span>
     </div>
   </div>
 
-  <!-- Sekcja Newsletter -->
+  <!-- SEKCJA WIDEO -->
+  <section class="section section-dark video-section" id="video" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="video-wrap">
+        <div class="video-text">
+          <div class="section-label">Poznaj mnie</div>
+          <h2 class="section-title-left" style="color:#fff;">Kim jest<br><span class="hero-accent">Adrian Dras?</span></h2>
+          <p style="color:rgba(255,255,255,.65); line-height:1.8; margin-bottom:28px;">
+            Zanim zdecydujesz się na współpracę, chcę żebyś mnie poznał. W tym krótkim filmie opowiadam o swojej drodze, metodach pracy i o tym, co możesz osiągnąć z moją pomocą.
+          </p>
+          <ul class="video-points">
+            <li><i class="fas fa-play-circle"></i> Moja historia i motywacja</li>
+            <li><i class="fas fa-play-circle"></i> Jak wygląda współpraca krok po kroku</li>
+            <li><i class="fas fa-play-circle"></i> Pierwsze efekty już po 4 tygodniach</li>
+          </ul>
+          <button class="btn btn-primary" data-scroll="#plany" style="margin-top:28px;">Zacznij teraz <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="video-player-wrap">
+          <!-- 
+            INSTRUKCJA: Zastąp VIDEO_ID_TUTAJ swoim ID z YouTube.
+            Przykład: jeśli link to https://www.youtube.com/watch?v=dQw4w9WgXcQ
+            to VIDEO_ID = dQw4w9WgXcQ
+          -->
+          <div class="video-placeholder" id="videoPlaceholder">
+            <div class="video-thumb-overlay">
+              <div class="play-btn-big" id="playBtn">
+                <i class="fas fa-play"></i>
+              </div>
+              <div class="video-placeholder-text">
+                <i class="fas fa-video"></i>
+                <span>W trakcie nagrywania</span>
+              </div>
+            </div>
+          </div>
+          <!-- Po dodaniu YT ID odkomentuj poniższy iframe i usuń video-placeholder powyżej: -->
+          <!--
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID_TUTAJ?rel=0&modestbranding=1"
+              title="Adrian Dras – trener personalny Wałbrzych"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+          -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO: TRENING PERSONALNY WAŁBRZYCH -->
+  <section class="section local-promo-section" id="walbrzych" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="local-promo-grid">
+        <div class="local-promo-text">
+          <div class="section-label">Trening stacjonarny</div>
+          <h2 class="section-title-left">Trening personalny<br><span class="highlight">Wałbrzych i okolice</span></h2>
+          <p>Oprócz planów online prowadzę <strong>treningi personalne na żywo</strong> w Wałbrzychu i okolicach. Jeśli wolisz bezpośredni kontakt i nadzór trenera podczas ćwiczeń — to opcja dla Ciebie.</p>
+          <div class="local-features">
+            <div class="local-feature">
+              <div class="local-feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <strong>Wałbrzych i okolice</strong>
+                <span>Dojazd do klienta lub wspólnie wybrane miejsce</span>
+              </div>
+            </div>
+            <div class="local-feature">
+              <div class="local-feature-icon"><i class="fas fa-user-friends"></i></div>
+              <div>
+                <strong>1 na 1</strong>
+                <span>Pełna uwaga trenera przez cały czas trwania treningu</span>
+              </div>
+            </div>
+            <div class="local-feature">
+              <div class="local-feature-icon"><i class="fas fa-calendar-check"></i></div>
+              <div>
+                <strong>Elastyczne terminy</strong>
+                <span>Dopasowuję się do Twojego grafiku</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
+            <a href="trening-personalny-walbrzych.html" class="btn btn-primary">Dowiedz się więcej <i class="fas fa-arrow-right"></i></a>
+            <a href="#kontakt" class="btn btn-outline">Zapytaj o termin</a>
+          </div>
+        </div>
+        <div class="local-promo-visual">
+          <div class="local-map-card">
+            <div class="local-map-pin">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="local-map-circles">
+              <div class="circle c1"></div>
+              <div class="circle c2"></div>
+              <div class="circle c3"></div>
+            </div>
+            <div class="local-locations">
+              <div class="loc-badge active">📍 Wałbrzych</div>
+              <div class="loc-badge">📍 Świdnica</div>
+              <div class="loc-badge">📍 Dzierżoniów</div>
+              <div class="loc-badge">📍 Nowa Ruda</div>
+              <div class="loc-badge">📍 Boguszów-Gorce</div>
+              <div class="loc-badge">📍 Szczawno-Zdrój</div>
+            </div>
+            <div class="local-cta-mini">
+              <i class="fas fa-phone"></i> Skontaktuj się i umów pierwszy trening
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O mnie -->
+  <section class="section" id="kim-jestem" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <img src="Images/adrian_sylwetka.jpg" alt="Adrian Dras – trener kalisteniki Wrocław" class="about-img" loading="lazy">
+          <div class="about-badge">
+            <i class="fas fa-dumbbell"></i>
+            <span>5 lat<br>treningu</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="section-label">Moja historia</div>
+          <h2 class="section-title-left">Cześć, jestem<br><span class="highlight">Adrian Dras</span></h2>
+          <p class="about-lead">Moja misja? Sprawić, by droga do Twojego wymarzonego ciała była jasna i motywująca.</p>
+          <p>Zaczynałem dokładnie tam, gdzie być może jesteś teraz Ty — z nadwagą i bez doświadczenia. Przez lata prób i błędów odkryłem, co naprawdę działa.</p>
+          <div class="about-milestones">
+            <div class="milestone">
+              <i class="fas fa-fire"></i>
+              <div>
+                <strong>5 lat</strong>
+                <span>treningów siłowych</span>
+              </div>
+            </div>
+            <div class="milestone">
+              <i class="fas fa-hands"></i>
+              <div>
+                <strong>2 lata</strong>
+                <span>specjalizacji w kalistenice</span>
+              </div>
+            </div>
+            <div class="milestone">
+              <i class="fas fa-trophy"></i>
+              <div>
+                <strong>Przemiana</strong>
+                <span>z lekkiej otyłości do wysportowanej sylwetki</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-actions">
+            <button class="btn btn-primary" data-scroll="#plany">Zobacz ofertę</button>
+            <button class="btn btn-outline" data-scroll="#kontakt">Napisz do mnie</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Przemiany -->
+  <section class="section section-dark" id="przemiany" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-label center">Efekty pracy</div>
+      <h2 class="section-title center">Przemiany & Osiągnięcia</h2>
+      <div class="transformations-grid">
+        <div class="transformation-card">
+          <div class="transformation-label">Moja przemiana sylwetkowa</div>
+          <div class="before-after">
+            <div class="ba-item">
+              <img src="Images/przed.jpg" alt="Adrian Dras przed przemianą" loading="lazy">
+              <span class="ba-tag before">Przed</span>
+            </div>
+            <div class="ba-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="ba-item">
+              <img src="Images/po.jpg" alt="Adrian Dras po przemianie" loading="lazy">
+              <span class="ba-tag after">Po</span>
+            </div>
+          </div>
+        </div>
+        <div class="transformation-card">
+          <div class="transformation-label">Postęp w kalistenice</div>
+          <div class="before-after">
+            <div class="ba-item">
+              <img src="Images/kalistenika1.png" alt="Kalistenika przed" loading="lazy">
+              <span class="ba-tag before">Przed</span>
+            </div>
+            <div class="ba-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="ba-item">
+              <img src="Images/kalistenika2.jpg" alt="Kalistenika po" loading="lazy">
+              <span class="ba-tag after">Po</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dlaczego ja -->
+  <section class="section" id="dlaczego-ja" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-label center">Dlaczego ja?</div>
+      <h2 class="section-title center">Co wyróżnia<br>moją ofertę?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-user-check"></i></div>
+          <h3>Indywidualne podejście</h3>
+          <p>Każdy plan tworzę od zera, dopasowany dokładnie do Twoich celów, możliwości i stylu życia.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-brain"></i></div>
+          <h3>Aktualna wiedza</h3>
+          <p>Stale się rozwijam i śledzę najnowsze badania, by dawać Ci metody, które naprawdę działają.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-comments"></i></div>
+          <h3>Dostępność 7/7</h3>
+          <p>Masz pytanie? Zawsze odpowiadam. Wsparcie online przez cały czas trwania współpracy.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Satysfakcja gwarantowana</h3>
+          <p>Jeśli plan nie spełni Twoich oczekiwań, zmodyfikuję go bezpłatnie. Twój sukces to mój sukces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opinie (screenshoty) -->
+  <section class="section section-dark" id="opinie" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-label center">Opinie</div>
+      <h2 class="section-title center">Co mówią klienci?</h2>
+      
+      <!-- Karuzela testimoniali tekstowych -->
+      <div class="testimonial-carousel">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card active">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Mega się cieszę że skorzystałem z twojej oferty Adrian. Bardzo mi to pomogło w rozbudowaniu pleców, gdzie miałem spore kompleksy. Dużo się też dowiedziałem o kalistenice. Widzę duży progres w sile jak i w sylwetce z czego jestem zadowolony — plan spełnił moje oczekiwania."</p>
+            <div class="testimonial-author">
+              <img src="Images/kuba.jpg" alt="Kuba" loading="lazy">
+              <div><strong>Kuba</strong><span>Plan indywidualny</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Bardzo profesjonalne prowadzenie, plan skonstruowany bardzo przejrzyście, wszystko było proste i zrozumiałe. No i oczywiście progresik super. Poprawiłem wiele skillów i nauczyłem się nowych. Pozdro 💪"</p>
+            <div class="testimonial-author">
+              <img src="Images/klient4.jpg" alt="Franek" loading="lazy">
+              <div><strong>Franek</strong><span>Prowadzenie online</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Adrian pomógł mi w pierwszych krokach dotyczących kalisteniki i nie tylko. Miałem od niego wsparcie przez cały czas co znacząco ułatwiło trenowanie. Bardzo polecam!!!"</p>
+            <div class="testimonial-author">
+              <img src="Images/klient5.jpg" alt="Aleksander" loading="lazy">
+              <div><strong>Aleksander</strong><span>Plan dla początkujących</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Sylwetka mocno się poprawiła... Widać realne efekty już po kilku tygodniach. Polecam każdemu kto chce zacząć przygodę z kalisteniką."</p>
+            <div class="testimonial-author">
+              <img src="Images/klient2.png" alt="Klient" loading="lazy">
+              <div><strong>Anonimowy klient</strong><span>Plan indywidualny</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Chciałem pochwalić się jak wychodzi front lever od zera. Progresja w planie była idealna — krok po kroku, bez kontuzji. Dzięki Adrian!"</p>
+            <div class="testimonial-author">
+              <img src="Images/klient3.png" alt="Mikołaj" loading="lazy">
+              <div><strong>Mikołaj</strong><span>Plan zaawansowany</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="t-prev" aria-label="Poprzedni"><i class="fas fa-chevron-left"></i></button>
+          <div class="t-dots" id="tDots"></div>
+          <button class="t-next" aria-label="Następny"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Screenshoty opinii -->
+      <div class="opinions-label">Opinie z wiadomości prywatnych:</div>
+      <div class="opinions-grid">
+        <img src="Images/opinia1.png" alt="Opinia klienta o treningu kalisteniki" class="opinion-img" loading="lazy">
+        <img src="Images/Opinia2.png" alt="Opinia klienta o planie treningowym" class="opinion-img" loading="lazy">
+        <img src="Images/Opinia3.png" alt="Opinia klienta o prowadzeniu online" class="opinion-img" loading="lazy">
+        <img src="Images/Opinia4.png" alt="Opinia klienta o indywidualnym planie" class="opinion-img" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Plany -->
+  <section class="section" id="plany" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-label center">Oferta</div>
+      <h2 class="section-title center">Wybierz swój plan</h2>
+      <p class="section-subtitle center">Każdy plan jest dopasowany do innego poziomu zaawansowania i budżetu.</p>
+      
+      <div class="plans-grid">
+        <!-- Plan premium - highlighted -->
+        <div class="plan-card plan-featured">
+          <div class="plan-badge">Najpopularniejszy</div>
+          <div class="plan-icon"><i class="fas fa-crown"></i></div>
+          <h3>Plan + Prowadzenie Online</h3>
+          <p class="plan-desc">Pełne wsparcie trenerskie przez cały miesiąc</p>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Spersonalizowany plan treningowy</li>
+            <li><i class="fas fa-check"></i> Miesięczne wsparcie online</li>
+            <li><i class="fas fa-check"></i> Filmiki instruktażowe</li>
+            <li><i class="fas fa-check"></i> Ćwiczenia rehabilitacyjne</li>
+            <li><i class="fas fa-check"></i> Konsultacja wideo online</li>
+          </ul>
+          <div class="plan-price"><span class="price-amount">250</span> zł</div>
+          <button class="btn btn-primary btn-full" onclick="location.href='https://buy.stripe.com/9B600kabw4Zn5aj0Yk8Ra02'">
+            Kup teraz <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Plan indywidualny -->
+        <div class="plan-card">
+          <div class="plan-icon"><i class="fas fa-dumbbell"></i></div>
+          <h3>Indywidualny Plan Treningowy</h3>
+          <p class="plan-desc">Spersonalizowany program dostosowany do Ciebie</p>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Pełen spersonalizowany plan</li>
+            <li><i class="fas fa-check"></i> Plan wg Twoich celów</li>
+            <li><i class="fas fa-check"></i> Filmiki instruktażowe</li>
+            <li><i class="fas fa-check"></i> Możliwa modyfikacja planu</li>
+          </ul>
+          <div class="plan-price"><span class="price-amount">150</span> zł</div>
+          <button class="btn btn-outline btn-full" onclick="location.href='https://buy.stripe.com/4gMeVefvQ4ZnbyH9uQ8Ra01'">
+            Kup teraz <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Początkujący bez sprzętu -->
+        <div class="plan-card">
+          <div class="plan-icon"><i class="fas fa-home"></i></div>
+          <h3>Początkujący – bez sprzętu</h3>
+          <p class="plan-desc">Zacznij od zera, bez siłowni i sprzętu</p>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Technika od podstaw</li>
+            <li><i class="fas fa-check"></i> Zero sprzętu wymagane</li>
+            <li><i class="fas fa-check"></i> Prawidłowa technika ćwiczeń</li>
+            <li><i class="fas fa-check"></i> Stopniowe progresje</li>
+          </ul>
+          <div class="plan-price"><span class="price-amount">50</span> zł</div>
+          <button class="btn btn-outline btn-full" onclick="location.href='https://buy.stripe.com/aFa28sdnI77v0U3cH28Ra03'">
+            Kup teraz <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Siłownia -->
+        <div class="plan-card">
+          <div class="plan-icon"><i class="fas fa-weight-hanging"></i></div>
+          <h3>Początkujący – siłownia</h3>
+          <p class="plan-desc">Fundament siły na sprzęcie siłowni</p>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Trening całego ciała</li>
+            <li><i class="fas fa-check"></i> Maszyny + wolne ciężary</li>
+            <li><i class="fas fa-check"></i> Prawidłowa technika</li>
+            <li><i class="fas fa-check"></i> Stopniowe zwiększanie obciążenia</li>
+          </ul>
+          <div class="plan-price"><span class="price-amount">50</span> zł</div>
+          <button class="btn btn-outline btn-full" onclick="location.href='https://buy.stripe.com/fZueVe0AW4ZndGP6iE8Ra04'">
+            Kup teraz <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Żywienie -->
+        <div class="plan-card">
+          <div class="plan-icon"><i class="fas fa-apple-alt"></i></div>
+          <h3>Pakiet żywieniowy</h3>
+          <p class="plan-desc">Dieta wspierająca Twoje cele treningowe</p>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Proste i szybkie przepisy</li>
+            <li><i class="fas fa-check"></i> Poradnik żywieniowy</li>
+            <li><i class="fas fa-check"></i> Listy zakupów i jadłospisy</li>
+            <li><i class="fas fa-check"></i> Praktyczne wskazówki</li>
+          </ul>
+          <div class="plan-price"><span class="price-amount">50</span> zł</div>
+          <button class="btn btn-outline btn-full" onclick="location.href='https://buy.stripe.com/00w3cwgzU1NbbyHcH28Ra05'">
+            Kup teraz <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Darmowy -->
+        <div class="plan-card plan-free">
+          <div class="plan-badge plan-badge-free">Bezpłatny</div>
+          <div class="plan-icon"><i class="fas fa-gift"></i></div>
+          <h3>Nauka stania na rękach</h3>
+          <p class="plan-desc">Zacznij od kultowego elementu kalisteniki</p>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Progresja od podstaw</li>
+            <li><i class="fas fa-check"></i> Ćwiczenia przygotowawcze</li>
+            <li><i class="fas fa-check"></i> Technika bezpiecznego stania</li>
+            <li><i class="fas fa-check"></i> Jak upadać bez kontuzji</li>
+          </ul>
+          <div class="plan-price"><span class="price-amount">0</span> zł</div>
+          <button class="btn btn-ghost btn-full download-btn" data-plan="handstand">
+            Pobierz bezpłatnie <i class="fas fa-download"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="plans-note">
+        <i class="fas fa-lock"></i> Bezpieczna płatność przez Stripe &nbsp;|&nbsp;
+        <i class="fas fa-envelope"></i> Plan dostarczony na email w ciągu kilku dni roboczych &nbsp;|&nbsp;
+        <i class="fas fa-redo"></i> Modyfikacja planu w razie potrzeby
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Preview -->
+  <section class="section section-dark" id="blog" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-label center">Wiedza</div>
+      <h2 class="section-title center">Blog treningowy</h2>
+      <p class="section-subtitle center">Darmowe artykuły o kalistenice, treningu i zdrowym stylu życia.</p>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <div class="blog-card-placeholder"><i class="fas fa-hands"></i></div>
+            <div class="blog-category">Kalistenika</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><i class="fas fa-calendar"></i> Maj 2025 &nbsp;·&nbsp; 5 min czytania</div>
+            <h3><a href="blog/nauka-stania-na-rekach.html">Jak nauczyć się stania na rękach? Kompletny przewodnik dla początkujących</a></h3>
+            <p>Stanie na rękach to jeden z najbardziej imponujących elementów kalisteniki. Sprawdź, jak ćwiczyć, żeby osiągnąć go szybko i bezpiecznie.</p>
+            <a href="blog/nauka-stania-na-rekach.html" class="blog-read-more">Czytaj więcej <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <div class="blog-card-placeholder"><i class="fas fa-dumbbell"></i></div>
+            <div class="blog-category">Trening</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><i class="fas fa-calendar"></i> Kwiecień 2025 &nbsp;·&nbsp; 7 min czytania</div>
+            <h3><a href="blog/kalistenika-dla-poczatkujacych.html">Kalistenika dla początkujących – od czego zacząć w 2025?</a></h3>
+            <p>Nie masz siłowni, nie masz sprzętu? Nic nie szkodzi. Kalistenika to jeden z najskuteczniejszych systemów treningowych, który potrzebuje tylko Twojego ciała.</p>
+            <a href="blog/kalistenika-dla-poczatkujacych.html" class="blog-read-more">Czytaj więcej <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <div class="blog-card-placeholder"><i class="fas fa-apple-alt"></i></div>
+            <div class="blog-category">Dieta</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><i class="fas fa-calendar"></i> Marzec 2025 &nbsp;·&nbsp; 6 min czytania</div>
+            <h3><a href="blog/dieta-przy-kalistenice.html">Co jeść przy treningu kalisteniki? Podstawy żywienia sportowca</a></h3>
+            <p>Trening bez odpowiedniej diety to jak samochód bez paliwa. Dowiedz się, jak żywić się prosto i skutecznie, żeby maksymalizować efekty.</p>
+            <a href="blog/dieta-przy-kalistenice.html" class="blog-read-more">Czytaj więcej <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+      <div class="blog-cta">
+        <a href="blog.html" class="btn btn-outline btn-large">Zobacz wszystkie artykuły <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
   <section class="section newsletter-section" id="newsletter" data-aos="fade-up">
-    <div class="newsletter-container">
-      <h2 class="section-title">Zapisz się do newslettera</h2>
-      <p>Otrzymuj darmowe porady treningowe i ekskluzywne materiały!</p>
-      
-      <form id="newsletterForm" class="newsletter-form">
-        <div class="form-group">
-          <input type="text" id="newsletterName" name="name" placeholder="Twoje imię" required>
+    <div class="section-inner">
+      <div class="newsletter-wrap">
+        <div class="newsletter-text">
+          <div class="section-label">Newsletter</div>
+          <h2>Zapisz się i otrzymuj<br>darmowe porady!</h2>
+          <ul class="newsletter-perks">
+            <li><i class="fas fa-check"></i> Cotygodniowe porady treningowe</li>
+            <li><i class="fas fa-check"></i> Ekskluzywne materiały tylko dla subskrybentów</li>
+            <li><i class="fas fa-check"></i> Powiadomienia o nowych planach i promocjach</li>
+          </ul>
         </div>
-        <div class="form-group">
-          <input type="email" id="newsletterEmail" name="email" placeholder="Twój email" required>
+        <div class="newsletter-form-wrap">
+          <form id="newsletterForm" class="newsletter-form">
+            <input type="text" id="newsletterName" name="name" placeholder="Twoje imię" required>
+            <input type="email" id="newsletterEmail" name="email" placeholder="Twój email" required>
+            <label class="checkbox-label">
+              <input type="checkbox" id="consent" required>
+              <span>Akceptuję <a href="polityka_prywatnosci.html" target="_blank">politykę prywatności</a></span>
+            </label>
+            <button type="submit" class="btn btn-primary btn-full">Zapisz się</button>
+          </form>
+          <div id="newsletterMessage" class="form-message"></div>
         </div>
-        <div class="form-group">
-          <input type="checkbox" id="consent" required>
-          <label for="consent">Akceptuję <a href="polityka_prywatnosci.html" target="_blank">politykę prywatności</a></label>
-        </div>
-        <button type="submit" class="btn btn-medium">Zapisz się</button>
-      </form>
-      
-      <div id="newsletterMessage" class="form-message"></div>
+      </div>
     </div>
   </section>
 
-  <!-- Sekcja "Kontakt" -->
+  <!-- Kontakt -->
   <section class="section" id="kontakt" data-aos="fade-up">
-    <img src="Images/54dad85f-f276-4d48-8caa-bf0533cbe768.jpg" alt="Plany treningowe Adriana Drasa" class="section-image" loading="lazy">
-    <h2 class="section-title">Kontakt</h2>	    
-
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3>Dane kontaktowe</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Miasto: Wrocław/Wałbrzych</p>
-        <p><i class="fas fa-globe"></i> Kraj: Polska</p>
-        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:adriancalisthenics1@gmail.com" class="contact-link">adriancalisthenics1@gmail.com</a></p>
-        <p><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" class="contact-link">@adrian_calisthenics1</a></p>
-      </div>
-      
-      <div class="contact-form">
-        <h3>Wyślij wiadomość</h3>
-        <form id="contactForm" onsubmit="return submitForm(event)">
-          <div class="form-group">
-            <label for="name">Imię:</label>
-            <input type="text" id="name" name="name" required>
+    <div class="section-inner">
+      <div class="section-label center">Kontakt</div>
+      <h2 class="section-title center">Napisz do mnie</h2>
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <h3>Dane kontaktowe</h3>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <strong>Lokalizacja</strong>
+              <span>Wałbrzych, Polska</span>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:adriancalisthenics1@gmail.com" class="contact-link">adriancalisthenics1@gmail.com</a>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="message">Wiadomość:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+            <div>
+              <strong>Instagram</strong>
+              <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" rel="noopener" class="contact-link">@adrian_calisthenics1</a>
+            </div>
           </div>
-          <button type="submit" class="btn btn-medium">Wyślij</button>
-        </form>
-        <div id="formMessage" class="form-message"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sekcja FAQ -->
-  <section class="section" id="faq" data-aos="fade-up">
-    <h2 class="section-title">Najczęściej zadawane pytania</h2>
-    
-    <div class="faq-container">
-      <!-- Pytanie 1 -->
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-icon">❌</span>
-          Jaki jest czas oczekiwania na zamówienie?
-          <i class="fas fa-chevron-down faq-arrow"></i>
-        </button>
-        <div class="faq-answer">
-          <p>W przypadku indywidualnego planu treningowego lub prowadzenia online czas oczekiwania to maksymalnie kilka dni roboczych od momentu w którym pieniądze trafią na konto.</p>
-          <p>Natomiast gotowy plan zostaje wysłany na maila przeważnie tego samego dnia od momentu w którym pieniądze trafią na konto.</p>
+          <div class="contact-response">
+            <i class="fas fa-clock"></i> Odpowiadam zazwyczaj w ciągu 24 godzin
+          </div>
         </div>
-      </div>
-      
-      <!-- Pytanie 2 -->
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-icon">❌</span>
-          Jakie są metody płatności?
-          <i class="fas fa-chevron-down faq-arrow"></i>
-        </button>
-        <div class="faq-answer">
-          <p>Akceptuje następujące metody płatności:</p>
-          <ul class="faq-list">
-            <li>Przelewy bankowe</li>
-            <li>Płatność Blik</li>
-            <li>PayPal</li>
-            <li>Google Pay</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Pytanie 3 -->
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-icon">❌</span>
-          Który plan treningowy powinienem wybrać?
-          <i class="fas fa-chevron-down faq-arrow"></i>
-        </button>
-        <div class="faq-answer">
-          <p>Wybór planu zależy od Twoich celów i doświadczenia:</p>
-          <ul class="faq-list">
-            <li><strong>Plan dla początkujących</strong> - jeśli dopiero zaczynasz przygodę z treningami</li>
-            <li><strong>Indywidualny Plan Treningowy</strong> - jeśli masz już doświadczenie i potrzebujesz spersonalizowanego programu</li>
-            <li><strong>Plan + prowadzenie online</strong> - jeśli chcesz pełnego wsparcia trenerskiego</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Pytanie 4 -->
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span class="faq-icon">❌</span>
-          Jak przebiega tworzenie indywidualnego planu treningowego?
-          <i class="fas fa-chevron-down faq-arrow"></i>
-        </button>
-        <div class="faq-answer">
-          <p>Proces tworzenia planu:</p>
-          <ol class="faq-ordered-list">
-            <li>Wypełniasz ankietę z informacjami o Twoich celach, doświadczeniu i dostępnym sprzęcie</li>
-            <li>Analizuję Twoje potrzeby i możliwości</li>
-            <li>Tworzę spersonalizowany plan treningowy</li>
-            <li>Otrzymujesz gotowy plan na maila wraz z instrukcjami</li>
-          </ol>
+        <div class="contact-form-card">
+          <h3>Wyślij wiadomość</h3>
+          <form id="contactForm" onsubmit="return submitForm(event)">
+            <div class="form-group">
+              <label for="name">Imię</label>
+              <input type="text" id="name" name="name" placeholder="Twoje imię" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Twój email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Wiadomość</label>
+              <textarea id="message" name="message" rows="5" placeholder="Opisz swoje cele i pytania..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Wyślij wiadomość <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+          <div id="formMessage" class="form-message"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stopka -->
- <footer>
-    &copy; 2025 Trener Adrian Dras. Wszelkie prawa zastrzeżone.
-    <br>
-    Fotografie: <strong>Adrian Paszul</strong> <br>
-    <a href="polityka_prywatnosci.html" class="contact-link">Polityka prywatności</a>
+  <!-- FAQ -->
+  <section class="section section-dark" id="faq" data-aos="fade-up">
+    <div class="section-inner">
+      <div class="section-label center">FAQ</div>
+      <h2 class="section-title center">Najczęstsze pytania</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Jaki jest czas oczekiwania na plan?
+            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Indywidualny plan treningowy lub prowadzenie online — max kilka dni roboczych od zaksięgowania płatności. Gotowy plan (dla początkujących, żywienie) — zazwyczaj tego samego dnia.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Jakie są dostępne metody płatności?
+            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Akceptuję: Stripe (karta), Przelew bankowy, BLIK, PayPal, Google Pay.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Który plan powinienem wybrać?
+            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Zaczynasz od zera?</strong> → Plan dla początkujących (bez sprzętu lub siłownia, 50 zł).<br>
+            <strong>Masz już doświadczenie?</strong> → Indywidualny Plan Treningowy (150 zł).<br>
+            <strong>Chcesz pełnego wsparcia?</strong> → Plan + Prowadzenie online (250 zł).</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Jak przebiega tworzenie indywidualnego planu?
+            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <ol>
+              <li>Wypełniasz ankietę o swoich celach, doświadczeniu i dostępnym sprzęcie</li>
+              <li>Analizuję Twoje potrzeby</li>
+              <li>Tworzę spersonalizowany plan treningowy</li>
+              <li>Otrzymujesz plan na email wraz z instrukcjami</li>
+            </ol>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Czy mogę zmodyfikować plan po zakupie?
+            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+          </button>
+          <div class="faq-answer">
+            <p>Tak! Jeśli plan indywidualny nie będzie spełniał Twoich oczekiwań, zmodyfikuję go bezpłatnie. Twój sukces jest dla mnie priorytetem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">ADRIAN<span>CALISTHENICS</span></div>
+          <p>Trener personalny z Wałbrzycha. Pomagam ludziom w przemianie ciała i umysłu przez sport.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <h4>Nawigacja</h4>
+          <a href="#plany">Plany treningowe</a>
+          <a href="#kim-jestem">O mnie</a>
+          <a href="#opinie">Opinie</a>
+          <a href="trening-personalny-walbrzych.html">Trening personalny Wałbrzych</a>
+          <a href="blog.html">Blog</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Plany</h4>
+          <a href="#plany">Plan + Prowadzenie (250 zł)</a>
+          <a href="#plany">Plan Indywidualny (150 zł)</a>
+          <a href="#plany">Początkujący (50 zł)</a>
+          <a href="#plany">Darmowy plan</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Kontakt</h4>
+          <a href="mailto:adriancalisthenics1@gmail.com">adriancalisthenics1@gmail.com</a>
+          <a href="https://www.instagram.com/adrian_calisthenics1" target="_blank" rel="noopener">@adrian_calisthenics1</a>
+          <span>Wałbrzych, Polska</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Adrian Dras. Wszelkie prawa zastrzeżone. | Fotografie: Adrian Paszul</span>
+        <a href="polityka_prywatnosci.html">Polityka prywatności</a>
+      </div>
+    </div>
   </footer>
+
+  <!-- Floating CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <button class="btn btn-primary" data-scroll="#plany">
+      <i class="fas fa-dumbbell"></i> Zacznij teraz
+    </button>
+  </div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>

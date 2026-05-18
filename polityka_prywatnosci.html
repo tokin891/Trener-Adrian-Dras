@@ -3,62 +3,348 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Polityka Prywatności - Trener Adrian Dras</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Polityka Prywatności – Adrian Dras | Trener Kalisteniki</title>
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Wymuszenie ciemnego tła dla całego body tej podstrony, aby zapobiec konfliktom ze styles.css */
+    body.privacy-page-body {
+      background-color: #0e0e0e !important;
+      color: #ffffff !important;
+    }
+
+    .privacy-container {
+      padding: 140px 20px 80px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: 'DM Sans', sans-serif;
+    }
+    
+    .privacy-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .privacy-header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 4rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      color: #FF6B00; /* Główny pomarańczowy z Twojego stylu */
+    }
+    
+    .privacy-date {
+      font-size: 0.95rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .privacy-lead {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #e0e0e0;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 20px;
+      border-left: 4px solid #FF6B00;
+      border-radius: 4px;
+      margin-bottom: 40px;
+    }
+    
+    .privacy-section {
+      background: #161616; /* Użycie Twojego koloru var(--bg-card) */
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 35px;
+      margin-bottom: 30px;
+    }
+    
+    .privacy-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    
+    .privacy-section h2 i {
+      color: #FF6B00;
+      font-size: 1.4rem;
+    }
+    
+    .privacy-section p {
+      line-height: 1.7;
+      color: #cccccc;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .privacy-section ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+
+    .privacy-section li {
+      line-height: 1.7;
+      color: #cccccc;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .privacy-section a {
+      color: #FF6B00;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .privacy-section a:hover {
+      color: #cc5500;
+      text-decoration: underline;
+    }
+    
+    /* przejrzysta tabela danych osobowych */
+    .privacy-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.95rem;
+    }
+    
+    .privacy-table th, .privacy-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .privacy-table th {
+      background: rgba(255, 255, 255, 0.04);
+      color: #ffffff;
+      font-weight: 600;
+      width: 30%;
+    }
+
+    .privacy-table td {
+      color: #dddddd;
+    }
+    
+    /* Elastyczna siatka praw użytkownika */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 25px 0;
+    }
+    
+    .right-card {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    
+    .right-card strong {
+      display: block;
+      color: #ffffff;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .right-card strong i {
+      color: #FF6B00;
+      margin-right: 6px;
+    }
+
+    .right-card span {
+      font-size: 0.95rem;
+      color: #b3b3b3;
+      line-height: 1.5;
+      display: block;
+    }
+    
+    .back-btn-wrap {
+      margin-bottom: 30px;
+    }
+
+    /* Responsywność dla tabel na telefonach */
+    @media (max-width: 600px) {
+      .privacy-table, .privacy-table tbody, .privacy-table tr, .privacy-table td, .privacy-table th {
+        display: block;
+        width: 100%;
+      }
+      .privacy-table tr {
+        margin-bottom: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+      }
+      .privacy-table th {
+        background: rgba(255, 255, 255, 0.03);
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-<body>
-  <nav id="main-nav">
+<body class="privacy-page-body">
+
+  <nav id="main-nav" style="position: fixed; width: 100%; top: 0; z-index: 1000; background: #0e0e0e; border-bottom: 1px solid rgba(255,255,255,0.08);">
     <div class="nav-container">
-      <a href="index.html#plany" class="nav-link">Plany</a>
-      <a href="index.html#kim-jestem" class="nav-link">Kim jestem</a>
-      <a href="index.html#kontakt" class="nav-link">Kontakt</a>
+      <a href="index.html" class="nav-logo">ADRIAN<span>CALISTHENICS</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link"><i class="fas fa-arrow-left"></i> Powrót do strony głównej</a>
+      </div>
     </div>
   </nav>
 
-  <section class="section" data-aos="fade-up">
-    <h1 class="section-title">Polityka Prywatności</h1>
-    <p>
-      Niniejsza Polityka Prywatności opisuje zasady przetwarzania danych osobowych
-      przekazywanych za pośrednictwem strony internetowej trenera Adriana Drasa.
+  <main class="privacy-container">
+    <div class="back-btn-wrap">
+      <a href="index.html" class="btn btn-small btn-outline"><i class="fas fa-arrow-left"></i> Wróć do strony głównej</a>
+    </div>
+
+    <header class="privacy-header">
+      <h1>Polityka Prywatności</h1>
+      <div class="privacy-date">Ostatnia aktualizacja: 17 maja 2026 r.</div>
+    </header>
+
+    <p class="privacy-lead">
+      Niniejsza Polityka Prywatności określa przejrzyste zasady przetwarzania i ochrony danych osobowych użytkowników korzystających ze strony internetowej <strong>https://adriancalisthenicsweb.pl/</strong> (zwanej dalej Serwisem). Dbamy o Twoją prywatność i zabezpieczamy pobrane informacje zgodnie z wymogami RODO.
     </p>
 
-    <h2>1. Administrator danych</h2>
-    <p>Administratorem danych jest Adrian Dras.</p>
+    <section class="privacy-section">
+      <h2><i class="fas fa-user-shield"></i> 1. Administrator Danych Osobowych</h2>
+      <p>Administratorem Twoich danych osobowych, czyli podmiotem decydującym o celach i metodach przetwarzania, jest:</p>
+      
+      <table class="privacy-table">
+        <tr>
+          <th>Trener:</th>
+          <td>Adrian Dras</td>
+        </tr>
+        <tr>
+          <th>Adres siedziby:</th>
+          <td>Wałbrzych</td>
+        </tr>
+        <tr>
+          <th>Kontakt E-mail:</th>
+          <td><a href="mailto:adriancalisthenics1@gmail.com">adriancalisthenics1@gmail.com</a></td>
+        </tr>
+      </table>
+    </section>
 
-    <h2>2. Zakres i cel zbierania danych</h2>
-    <p>
-      Dane osobowe (imię, adres e-mail) podawane są dobrowolnie przy zapisie do newslettera
-      lub wysyłce formularza kontaktowego. Dane wykorzystywane są wyłącznie do celów kontaktowych
-      i marketingowych związanych z działalnością trenera.
-    </p>
+    <section class="privacy-section">
+      <h2><i class="fas fa-database"></i> 2. Cel, Podstawa i Czas Przetwarzania Danych</h2>
+      <p>Zbieramy wyłącznie podstawowe dane, niezbędne do kontaktu, wysyłki darmowych planów treningowych lub realizacji zamówień:</p>
+      
+      <table class="privacy-table" style="font-size: 0.9rem;">
+        <thead>
+          <tr>
+            <th style="width:25%">Miejsce zebrania</th>
+            <th style="width:25%">Zakres danych</th>
+            <th style="width:25%">Cel i podstawa</th>
+            <th style="width:25%">Przechowywanie</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Formularz kontaktowy</strong></td>
+            <td>Imię, E-mail, wiadomość</td>
+            <td>Odpowiedź na Twoje zapytanie (art. 6 ust. 1 lit. f RODO)</td>
+            <td>Do zakończenia rozmowy</td>
+          </tr>
+          <tr>
+            <td><strong>Newsletter / Darmowy plan</strong></td>
+            <td>Imię, E-mail</td>
+            <td>Wysyłka bezpłatnych wiedzy i planów (art. 6 ust. 1 lit. a RODO)</td>
+            <td>Do momentu rezygnacji</td>
+          </tr>
+          <tr>
+            <td><strong>Płatność Stripe (Plany)</strong></td>
+            <td>Dane płatności, E-mail</td>
+            <td>Realizacja zamówienia i wysyłka planu (art. 6 ust. 1 lit. b RODO)</td>
+            <td>Okres wymagany skarbowo</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-    <h2>3. Udostępnianie danych</h2>
-    <p>
-      Dane nie są sprzedawane ani przekazywane podmiotom trzecim, z wyjątkiem dostawców
-      usług technicznych niezbędnych do realizacji zamówień i obsługi wiadomości.
-    </p>
+    <section class="privacy-section">
+      <h2><i class="fas fa-cookie-bite"></i> 3. Pliki Cookies i Google Analytics</h2>
+      <p>Strona wykorzystuje technologię plików cookies (tzw. ciasteczka) do celów statystycznych, poprawnego działania formularzy oraz analityki ruchu sieciowego.</p>
+      <p>W tym celu korzystamy z oprogramowania <strong>Google Analytics</strong> (dostawca: Google Ireland Limited). Informacje o Twoich akcjach na stronie zbierane są w sposób <strong>całkowicie zanonimizowany</strong> (np. przeglądane podstrony, czas sesji, przybliżona lokalizacja, urządzenie) i służą ulepszaniu zawartości serwisu.</p>
+      <p>Możesz w dowolnym momencie zablokować pliki cookies lub wyczyścić je, korzystając z opcji konfiguracyjnych swojej przeglądarki internetowej.</p>
+    </section>
 
-    <h2>4. Prawa użytkownika</h2>
-    <p>
-      Użytkownik ma prawo dostępu do swoich danych, ich poprawienia lub usunięcia
-      poprzez kontakt mailowy: <a href="mailto:adriancalisthenics1@gmail.com">adriancalisthenics1@gmail.com</a>.
-    </p>
+    <section class="privacy-section">
+      <h2><i class="fas fa-share-alt"></i> 4. Odbiorcy Danych Osobowych</h2>
+      <p>Twoje dane osobowe są poufne i bezpieczne. Nie są przekazywane ani odsprzedawane zewnętrznym firmom marketingowym. Mogą być powierzone jedynie zaufanym partnerom technologicznym obsługującym elementy naszej infrastruktury:</p>
+      <ul>
+        <li><strong>Dostawca usługi hostingowej</strong> – podmiot utrzymujący pliki strony na serwerze.</li>
+        <li><strong>System wysyłkowy (np. EmailJS / SMTP)</strong> – automatyzacja przesyłania powiadomień oraz newsletterów.</li>
+        <li><strong>Stripe</strong> – certyfikowany i bezpieczny operator płatności obsługujący transakcje zakupu planów treningowych.</li>
+      </ul>
+    </section>
 
-    <h2>5. Pliki cookies</h2>
-    <p>
-      Strona może korzystać z plików cookies w celu poprawy jakości działania i analizy ruchu.
-    </p>
+    <section class="privacy-section">
+      <h2><i class="fas fa-balance-scale"></i> 5. Twoje Prawa (Zgodnie z RODO)</h2>
+      <p>W każdej chwili masz pełne prawo do zarządzania swoimi informacjami. Przysługuje Ci prawo do:</p>
+      
+      <div class="rights-grid">
+        <div class="right-card">
+          <strong><i class="fas fa-eye"></i> Wglądu i dostępu</strong>
+          <span>Możliwość poproszenia o zestawienie oraz kopię danych.</span>
+        </div>
+        <div class="right-card">
+          <strong><i class="fas fa-edit"></i> Aktualizacji danych</strong>
+          <span>Prawo do poprawienia błędnych lub nieaktualnych wpisów.</span>
+        </div>
+        <div class="right-card">
+          <strong><i class="fas fa-trash-alt"></i> Usunięcia danych</strong>
+          <span>Żądanie całkowitego wykasowania danych ("prawo do bycia zapomnianym").</span>
+        </div>
+        <div class="right-card">
+          <strong><i class="fas fa-undo"></i> Cofnięcia zgody</strong>
+          <span>Natychmiastowe wypisanie się z listy subskrybentów newslettera.</span>
+        </div>
+      </div>
+      
+      <p style="margin-top: 25px;">Aby zgłosić chęć wykonania swoich praw, wyślij e-mail na adres: <a href="mailto:adriancalisthenics1@gmail.com">adriancalisthenics1@gmail.com</a>.</p>
+      <p>Jeśli uznasz, że Twoje dane są przetwarzane niezgodnie z prawem, masz prawo wnieść skargę do Urzędu Ochrony Danych Osobowych (UODO).</p>
+    </section>
 
-    <h2>6. Zmiany polityki prywatności</h2>
-    <p>
-      Polityka prywatności może być okresowo aktualizowana poprzez publikację nowej wersji na tej stronie.
-    </p>
-  </section>
+    <section class="privacy-section">
+      <h2><i class="fas fa-lock"></i> 6. Szyfrowanie Połączenia (SSL)</h2>
+      <p>Cały Serwis zabezpieczony jest nowoczesnym, szyfrowanym protokołem transmisji danych – **certyfikatem SSL**. Wszystkie informacje, które wpisujesz w formularzu kontaktowym, oknach zapisu (pop-up) czy modułach newslettera, są natychmiast kodowane i uniemożliwiają przejęcie ich przez niepowołane podmioty.</p>
+    </section>
+  </main>
 
-  <footer>
-    &copy; 2025 Trener Adrian Dras. Wszelkie prawa zastrzeżone.
-    <br>
-    <a href="polityka-prywatnosci.html" style="color: var(--primary-color); text-decoration: none;">Polityka prywatności</a>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">ADRIAN<span>CALISTHENICS</span></div>
+          <p>Trener kalisteniki z Wrocławia. Pomagam ludziom w przemianie ciała i umysłu przez sport.</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Kontakt</h4>
+          <a href="mailto:adriancalisthenics1@gmail.com">adriancalisthenics1@gmail.com</a>
+          <span>Wrocław / Wałbrzych, Polska</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Adrian Dras. Wszelkie prawa zastrzeżone.</span>
+        <a href="index.html">Strona główna</a>
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>
